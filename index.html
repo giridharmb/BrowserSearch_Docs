@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>BrowserSearch for macOS</title>
-  <meta name="description" content="BrowserSearch finds any open tab in Chrome, Safari or Firefox with a keystroke. Fuzzy search, arrow keys, and it jumps straight to the right window and tab.">
+  <meta name="description" content="BrowserSearch finds any open tab in Chrome, Safari or Firefox with a keystroke. Tabs grouped by browser and window, fuzzy search, recent tabs, and it jumps straight to the right tab.">
   <link rel="icon" href="images/icon.png">
   <link rel="stylesheet" href="assets/style.css">
 </head>
@@ -23,28 +23,140 @@
 <main>
   <div class="wrap hero">
     <img class="icon" src="images/icon-512.png" alt="BrowserSearch app icon">
-    <h1>Find any tab in <span class="grad-text">a keystroke</span>.</h1>
-    <p class="lead">BrowserSearch lives in your menu bar. Press <kbd>⌥Space</kbd>, type a few letters, and jump straight to the matching tab in Chrome, Safari or Firefox, whichever window it's in.</p>
+    <h1>Every tab, every browser,<br><span class="grad-text">one keystroke away</span>.</h1>
+    <p class="lead">Press <kbd>⌥Space</kbd>, type a few letters, hit <kbd>↩</kbd>. BrowserSearch jumps straight to the tab in Chrome, Safari or Firefox, whichever window it's hiding in.</p>
     <div class="actions">
-      <a class="btn primary" href="docs.html">Read the docs</a>
-      <a class="btn" href="support.html">Get help</a>
+      <a class="btn primary" href="docs.html#start">Get started</a>
+      <a class="btn" href="#keyboard">Keyboard shortcuts</a>
     </div>
-    <p class="meta">macOS 14 Sonoma or later · Nothing leaves your Mac</p>
+    <p class="meta">macOS 14 Sonoma or later · Lives in your menu bar · Nothing leaves your Mac</p>
+
+    <div class="viewer">
+      <input type="radio" name="view" id="v-all" checked>
+      <input type="radio" name="view" id="v-search">
+      <input type="radio" name="view" id="v-recent">
+      <div class="switch" role="tablist" aria-label="Screenshots">
+        <label for="v-all">All tabs</label>
+        <label for="v-search">Searching</label>
+        <label for="v-recent">Recent</label>
+      </div>
+      <div class="frames">
+        <img class="f-all" src="images/panel-all.png" alt="The BrowserSearch panel listing tabs grouped under Chrome and Safari, and by window">
+        <img class="f-search" src="images/panel-search.png" alt="Typing 'store' narrows the list to the two matching Chrome tabs">
+        <img class="f-recent" src="images/panel-recent.png" alt="The Recent list showing the most recently used tabs, newest first, with the previous tab preselected">
+      </div>
+    </div>
   </div>
 
   <section>
+    <div class="wrap center">
+      <span class="eyebrow">How it works</span>
+      <h2>Three keys and you're there</h2>
+      <p class="section-lead">No hunting through a row of tiny favicons or a stack of windows.</p>
+      <div class="steps" style="text-align:left">
+        <div class="step"><h3>Summon</h3><p>Press <kbd>⌥Space</kbd> from any app. The panel opens on the screen you're looking at.</p></div>
+        <div class="step"><h3>Type</h3><p>A few letters of a title or address. Results narrow as you type, still grouped by browser.</p></div>
+        <div class="step"><h3>Jump</h3><p><kbd>↑</kbd> <kbd>↓</kbd> then <kbd>↩</kbd>, or <kbd>⌘1</kbd>–<kbd>⌘9</kbd> directly. The right window comes forward with the tab selected.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section>
     <div class="wrap">
-      <h2>Built for people with too many tabs</h2>
-      <p class="section-lead">One shortcut, every browser, no mouse.</p>
+      <div class="center">
+        <span class="eyebrow">Features</span>
+        <h2>Built for people with too many tabs</h2>
+        <p class="section-lead">Everything is reachable from the keyboard, and nothing gets in your way.</p>
+      </div>
       <div class="grid">
-        <div class="card"><span class="emoji">⌨️</span><h3>Global hotkey</h3><p>Works from any app. <kbd>⌥Space</kbd> by default, or record your own in Settings.</p></div>
-        <div class="card"><span class="emoji">🔎</span><h3>Fuzzy search</h3><p>Matches titles and URLs. <code>gh pull</code> finds “Pull requests · GitHub”; skipped letters still match.</p></div>
-        <div class="card"><span class="emoji">🧭</span><h3>Every browser at once</h3><p>Google Chrome, Safari and Firefox, side by side in one list with each browser's icon.</p></div>
-        <div class="card"><span class="emoji">🎯</span><h3>Straight to the tab</h3><p>Raises the right window and selects the tab, even when you have dozens of windows open.</p></div>
-        <div class="card"><span class="emoji">⚡️</span><h3>Instant</h3><p>The panel opens with your last list immediately, then refreshes. Reading a hundred tabs takes a fraction of a second.</p></div>
-        <div class="card"><span class="emoji">💤</span><h3>Never launches browsers</h3><p>Only browsers that are already open are searched. If only Chrome is running, only Chrome is searched.</p></div>
-        <div class="card"><span class="emoji">🚀</span><h3>Launch at login</h3><p>Turn it on once in Settings and the hotkey is always ready.</p></div>
-        <div class="card"><span class="emoji">🔒</span><h3>Private</h3><p>Tab titles and URLs are read on your Mac, used for the search, and never stored or sent anywhere.</p></div>
+        <div class="card"><span class="emoji">🌳</span><h3>Organized like your Mac</h3><p>Tabs grouped by browser, then by window, with the tab each window is showing marked.</p></div>
+        <div class="card"><span class="emoji">🔎</span><h3>Fuzzy search</h3><p>Titles and addresses. <code>store</code>, <code>gh pull</code>, or just initials: <code>pr</code> finds “Pull requests”.</p></div>
+        <div class="card"><span class="emoji">🕘</span><h3>Recent tabs <span class="tag new">new</span></h3><p>A live, most-recently-used list across all browsers. Press <kbd>⇥</kbd> to switch to it.</p></div>
+        <div class="card"><span class="emoji">↩️</span><h3>Jump back</h3><p>Open on Recent and the previous tab is preselected: shortcut, <kbd>↩</kbd>, and you're back. Like <kbd>⌘⇥</kbd> for tabs.</p></div>
+        <div class="card"><span class="emoji">⚡️</span><h3>Number keys</h3><p><kbd>⌘1</kbd>–<kbd>⌘9</kbd> open the first nine results instantly. <kbd>⌘↑</kbd> <kbd>⌘↓</kbd> hop between browsers.</p></div>
+        <div class="card"><span class="emoji">🧹</span><h3>Tidy up</h3><p>Close the selected tab with <kbd>⌘W</kbd> without leaving the panel. Copy its address with <kbd>⌘C</kbd>.</p></div>
+        <div class="card"><span class="emoji">♻️</span><h3>Reopen closed tabs</h3><p>Tabs you closed stay in Recent; pick one to open it again in the same browser.</p></div>
+        <div class="card"><span class="emoji">💤</span><h3>Never launches browsers</h3><p>Only open browsers are searched. If only Chrome is running, only Chrome is searched.</p></div>
+        <div class="card"><span class="emoji">🔒</span><h3>Private by design</h3><p>No network access, no analytics. Recent tabs are kept on your Mac and can be turned off or cleared.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="shot">
+        <div>
+          <span class="eyebrow">Search</span>
+          <h2>Results narrow as you type</h2>
+          <ul>
+            <li>Every word you type has to match, in any order.</li>
+            <li>Exact text ranks first; matches near the start of a title beat those at the end.</li>
+            <li>Results stay grouped by browser and window, best group first.</li>
+            <li>Add a browser name to narrow it: <code>safari docs</code>.</li>
+          </ul>
+        </div>
+        <img src="images/panel-search.png" alt="Search results for 'store' grouped under Chrome">
+      </div>
+      <div class="shot flip">
+        <div>
+          <span class="eyebrow">Recent</span>
+          <h2>Your tab history, across browsers</h2>
+          <ul>
+            <li>Newest first, with how long ago you used each tab.</li>
+            <li>Updates on its own as you browse.</li>
+            <li>Closed tabs can be reopened in one keystroke.</li>
+            <li>Make it the default view in Settings for instant “jump back”.</li>
+          </ul>
+        </div>
+        <img src="images/panel-recent.png" alt="Recent tabs list, newest first">
+      </div>
+    </div>
+  </section>
+
+  <section id="keyboard">
+    <div class="wrap">
+      <div class="center">
+        <span class="eyebrow">Keyboard</span>
+        <h2>Never touch the mouse</h2>
+        <p class="section-lead">The bottom of the panel always shows these, so there's nothing to memorize.</p>
+      </div>
+      <div class="keys">
+        <div class="key"><kbd>⌥Space</kbd><span>Open or close the panel</span></div>
+        <div class="key"><kbd>↑ ↓</kbd><span>Move through results</span></div>
+        <div class="key"><kbd>↩</kbd><span>Switch to the tab</span></div>
+        <div class="key"><kbd>⌘1–9</kbd><span>Open result 1–9</span></div>
+        <div class="key"><kbd>⌘↑ ⌘↓</kbd><span>Previous / next browser</span></div>
+        <div class="key"><kbd>⇥</kbd><span>All tabs ⇄ Recent</span></div>
+        <div class="key"><kbd>⌘W</kbd><span>Close the selected tab</span></div>
+        <div class="key"><kbd>⌘C</kbd><span>Copy the tab's address</span></div>
+        <div class="key"><kbd>⌘R</kbd><span>Reload the tab list</span></div>
+        <div class="key"><kbd>esc</kbd><span>Dismiss</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="center">
+        <span class="eyebrow">Browsers</span>
+        <h2>Works with the browsers you use</h2>
+        <p class="section-lead">Turn any of them off in Settings › Browsers.</p>
+      </div>
+      <div class="table-scroll"><table>
+        <tr><th>Browser</th><th>Search titles</th><th>Search addresses</th><th>Switch</th><th>Close with ⌘W</th></tr>
+        <tr><td>Google Chrome</td><td class="yes">✓</td><td class="yes">✓</td><td class="yes">✓</td><td class="yes">✓</td></tr>
+        <tr><td>Safari</td><td class="yes">✓</td><td class="yes">✓</td><td class="yes">✓</td><td class="yes">✓</td></tr>
+        <tr><td>Firefox</td><td class="yes">✓</td><td>—</td><td class="yes">✓</td><td>—</td></tr>
+      </table></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="cta">
+        <h2>Stop hunting for tabs</h2>
+        <p>Set your shortcut, turn on Launch at login, and every tab is a keystroke away.</p>
+        <a class="btn" href="docs.html#start">Read the getting-started guide</a>
       </div>
     </div>
   </section>

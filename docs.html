@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Docs · BrowserSearch</title>
-  <meta name="description" content="How to use BrowserSearch: hotkey, search, keyboard controls, browser support and permissions.">
+  <meta name="description" content="How to use BrowserSearch: hotkey, the tab tree, search, recent tabs, keyboard controls, browser support, permissions and settings.">
   <link rel="icon" href="images/icon.png">
   <link rel="stylesheet" href="assets/style.css">
 </head>
@@ -23,7 +23,9 @@
 <main class="wrap docs">
   <nav class="toc" aria-label="On this page">
     <a href="#start">Getting started</a>
+    <a href="#panel">The panel</a>
     <a href="#search">Searching</a>
+    <a href="#recent">Recent tabs</a>
     <a href="#keys">Keyboard</a>
     <a href="#browsers">Supported browsers</a>
     <a href="#permissions">Permissions</a>
@@ -33,60 +35,93 @@
   <article class="content">
     <h2 id="start">Getting started</h2>
     <ol>
-      <li>Open BrowserSearch. A magnifier icon appears in your menu bar.</li>
-      <li>Press <kbd>⌥Space</kbd> anywhere. The search panel opens in the middle of your screen.</li>
-      <li>The first time you search while Chrome or Safari is open, macOS asks whether BrowserSearch may control that browser. Click <strong>Allow</strong>.</li>
+      <li>Open BrowserSearch. Settings appears the first time, and a browser-window-with-magnifier icon appears in your menu bar.</li>
+      <li>Optional: change the shortcut, and turn on <strong>Launch at login</strong>.</li>
+      <li>Press <kbd>⌥Space</kbd> anywhere. The first time you search while Chrome or Safari is open, macOS asks whether BrowserSearch may control it. Click <strong>Allow</strong>.</li>
       <li>Type, pick a tab with <kbd>↑</kbd> <kbd>↓</kbd>, press <kbd>↩</kbd>.</li>
     </ol>
-    <div class="callout">Using Firefox? Open <strong>Settings… › Grant Accessibility…</strong> once. See <a href="#permissions">Permissions</a>.</div>
+    <div class="callout">Using Firefox? Open <strong>Settings › Browsers</strong> and click <strong>Grant…</strong> next to Firefox. See <a href="#permissions">Permissions</a>.</div>
+
+    <h2 id="panel">The panel</h2>
+    <img src="images/panel-all.png" alt="The panel with tabs grouped under Chrome (two windows) and Safari">
+    <ul>
+      <li><strong>Grouped by browser,</strong> with each browser's tab count.</li>
+      <li><strong>Then by window,</strong> when a browser has more than one window open.</li>
+      <li><strong>A dot</strong> marks the tab each window is currently showing.</li>
+      <li><strong><kbd>⌘1</kbd>–<kbd>⌘9</kbd></strong> labels on the right open those results directly.</li>
+      <li>The <strong>All Tabs / Recent</strong> switch at the top changes views; <kbd>⇥</kbd> does the same.</li>
+      <li>The bar at the bottom lists the keys you can use.</li>
+    </ul>
+    <p>The panel opens on the screen your pointer is on, and closes when you press <kbd>esc</kbd>, press the shortcut again, or click anywhere else.</p>
 
     <h2 id="search">Searching</h2>
-    <p>Each tab is matched against its title, its URL and the browser's name.</p>
+    <p>Each tab is matched against its title, its address (without <code>https://</code> and <code>www.</code>) and the browser's name.</p>
     <ul>
-      <li><strong>Every word must match.</strong> <code>gh pull</code> finds “Pull requests · GitHub” but not “GitHub Home”.</li>
-      <li><strong>Letters can be skipped.</strong> <code>gthb</code> still finds GitHub.</li>
-      <li><strong>Exact text ranks first,</strong> and a match near the start of a title beats one near the end.</li>
+      <li><strong>Every word must match,</strong> in any order. <code>gh pull</code> finds “Pull requests · GitHub”.</li>
+      <li><strong>Initials work:</strong> <code>pr</code> finds “<u>P</u>ull <u>r</u>equests”.</li>
+      <li><strong>Letters can be skipped</strong> once you type three or more, as long as they're close together: <code>gthb</code> finds GitHub.</li>
+      <li><strong>Exact text ranks first,</strong> and a match near the start beats one near the end. The browser with the best match is listed first.</li>
       <li><strong>Add a browser name</strong> to narrow it down: <code>safari docs</code>.</li>
     </ul>
-    <p>With an empty search box the panel lists every open tab.</p>
+
+    <h2 id="recent">Recent tabs</h2>
+    <img src="images/panel-recent.png" alt="Recent tabs, newest first">
+    <p>The Recent view lists the tabs you used most recently, across all browsers, newest first, with how long ago you used each one.</p>
+    <ul>
+      <li><strong>It updates by itself.</strong> While a browser is in front, BrowserSearch notes which tab you're looking at every couple of seconds. Tabs you pick in the panel are added immediately.</li>
+      <li><strong>Jump back.</strong> If you open the panel from a browser, the tab you're on is first, so the <em>previous</em> tab is preselected. Shortcut, <kbd>↩</kbd>, and you're back.</li>
+      <li><strong>Closed tabs</strong> show <em>closed · reopen</em>. Picking one opens its address again in the same browser.</li>
+      <li>The last 50 tabs are kept. Searching works here too.</li>
+    </ul>
+    <div class="callout">Turn on <strong>Open the panel on Recent</strong> in Settings to make jump-back a two-key habit. Recent tabs can be turned off or cleared at any time.</div>
 
     <h2 id="keys">Keyboard</h2>
     <div class="table-scroll"><table>
       <tr><th>Key</th><th>Action</th></tr>
       <tr><td><kbd>⌥Space</kbd> (default)</td><td>Open or close the panel</td></tr>
       <tr><td><kbd>↑</kbd> / <kbd>↓</kbd></td><td>Move the selection (wraps around)</td></tr>
+      <tr><td><kbd>⇞</kbd> / <kbd>⇟</kbd></td><td>Move eight rows at a time</td></tr>
+      <tr><td><kbd>⌘↑</kbd> / <kbd>⌘↓</kbd></td><td>Jump to the previous / next browser</td></tr>
       <tr><td><kbd>↩</kbd></td><td>Switch to the selected tab</td></tr>
-      <tr><td><kbd>Esc</kbd></td><td>Close the panel and return to what you were doing</td></tr>
+      <tr><td><kbd>⌘1</kbd>–<kbd>⌘9</kbd></td><td>Switch to result 1–9</td></tr>
+      <tr><td><kbd>⇥</kbd></td><td>Toggle All Tabs and Recent</td></tr>
+      <tr><td><kbd>⌘W</kbd></td><td>Close the selected tab in its browser (Chrome, Safari)</td></tr>
+      <tr><td><kbd>⌘C</kbd></td><td>Copy the selected tab's address (copies text instead if you've selected some in the search box)</td></tr>
+      <tr><td><kbd>⌘R</kbd></td><td>Reload the tab list</td></tr>
+      <tr><td><kbd>esc</kbd></td><td>Close the panel and return to what you were doing</td></tr>
     </table></div>
-    <p>You can also click a result. Clicking outside the panel closes it.</p>
+    <p>You can also click any result.</p>
 
     <h2 id="browsers">Supported browsers</h2>
     <div class="table-scroll"><table>
-      <tr><th>Browser</th><th>Searches</th><th>Notes</th></tr>
-      <tr><td>Google Chrome</td><td>Title and URL</td><td>All windows and profiles that are open</td></tr>
-      <tr><td>Safari</td><td>Title and URL</td><td>All windows</td></tr>
-      <tr><td>Firefox</td><td>Title only</td><td>Needs Accessibility permission</td></tr>
+      <tr><th>Browser</th><th>Searches</th><th>Close tab</th><th>Recent</th></tr>
+      <tr><td>Google Chrome</td><td>Title and address</td><td>Yes</td><td>Yes</td></tr>
+      <tr><td>Safari</td><td>Title and address</td><td>Yes</td><td>Yes</td></tr>
+      <tr><td>Firefox</td><td>Title only</td><td>No</td><td>Yes, but closed Firefox tabs can't be reopened</td></tr>
     </table></div>
     <p>Browsers that aren't running are skipped. BrowserSearch never opens a browser just to search it.</p>
 
     <h2 id="permissions">Permissions</h2>
-    <p><strong>Automation (Chrome, Safari).</strong> Lets BrowserSearch read tab titles and URLs and switch tabs. macOS asks once per browser. Review it in System Settings › Privacy &amp; Security › Automation.</p>
-    <p><strong>Accessibility (Firefox only).</strong> Firefox has no scripting support for tabs, so BrowserSearch reads Firefox's tab bar the way assistive tools do, and clicks the tab you pick. Turn it on with <strong>Settings… › Grant Accessibility…</strong>, then enable BrowserSearch in System Settings › Privacy &amp; Security › Accessibility.</p>
+    <p><strong>Automation (Chrome, Safari).</strong> Lets BrowserSearch read tab titles and addresses, switch and close tabs. macOS asks once per browser, the first time you search, or right away if you click <strong>Allow…</strong> in Settings › Browsers. Review it in System Settings › Privacy &amp; Security › Automation.</p>
+    <p><strong>Accessibility (Firefox only).</strong> Firefox has no scripting support for tabs, so BrowserSearch reads Firefox's tab bar the way assistive tools do, and clicks the tab you pick. Click <strong>Grant…</strong> in Settings › Browsers, then turn on BrowserSearch in System Settings › Privacy &amp; Security › Accessibility.</p>
 
     <h2 id="settings">Settings</h2>
-    <p>Open from the menu bar icon › <strong>Settings…</strong>, or open BrowserSearch again from Finder or Spotlight. Settings also opens by itself the first time you run BrowserSearch.</p>
+    <p>Open from the menu bar icon › <strong>Settings…</strong>, or open BrowserSearch again from Finder or Spotlight.</p>
     <h3>General</h3>
     <ul>
-      <li><strong>Search shortcut.</strong> Click it and press a new combination. <kbd>Esc</kbd> cancels. Combinations another app already owns are refused.</li>
+      <li><strong>Search shortcut.</strong> Click it and press a new combination. <kbd>esc</kbd> cancels. Combinations another app already owns are refused.</li>
       <li><strong>Launch at login.</strong> Starts BrowserSearch quietly in the menu bar when you log in. If macOS asks for approval, click <strong>Open Login Items</strong>.</li>
       <li><strong>Show in menu bar.</strong> Turn off for a clean menu bar. The shortcut keeps working; open BrowserSearch from Finder or Spotlight to get back to Settings.</li>
       <li><strong>Match web addresses.</strong> On by default. Turn off to search tab titles only.</li>
-      <li><strong>Show web addresses in results.</strong> Hide the URL line for a more compact list.</li>
+      <li><strong>Show web addresses in results.</strong> Hide the address line for a more compact list.</li>
+      <li><strong>Remember recently used tabs.</strong> Turns the Recent view on or off.</li>
+      <li><strong>Open the panel on Recent.</strong> Start in Recent instead of All Tabs.</li>
+      <li><strong>Clear Recent Tabs.</strong> Forgets the list.</li>
     </ul>
     <h3>Browsers</h3>
     <ul>
-      <li><strong>On/off per browser.</strong> Leave out a browser you don't want searched.</li>
-      <li><strong>Permission status</strong> for each browser, with <strong>Allow…</strong> (Chrome, Safari) or <strong>Grant…</strong> (Firefox) to ask for it right away instead of on first search.</li>
+      <li><strong>On/off per browser.</strong> Leave out a browser you don't want searched or tracked.</li>
+      <li><strong>Permission status</strong> for each browser, with <strong>Allow…</strong> (Chrome, Safari) or <strong>Grant…</strong> (Firefox).</li>
       <li><strong>Open Privacy &amp; Security Settings</strong> to review or revoke access.</li>
     </ul>
     <h3>About</h3>

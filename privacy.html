@@ -26,10 +26,15 @@
     <p class="section-lead">Effective October 24, 2026. Short version: BrowserSearch doesn't collect, sell or share any data about you.</p>
 
     <h3>What BrowserSearch reads</h3>
-    <p>When you open the search panel, BrowserSearch reads the titles and URLs of tabs in browsers that are already open, so it can search them. This happens on your Mac, and the list is kept in memory only until it's replaced by the next search. It is never written to disk.</p>
+    <p>When you open the search panel, BrowserSearch reads the titles and URLs of tabs in browsers that are already open, so it can search them. That list is kept in memory only and replaced on the next search.</p>
+    <p>For <strong>Recent tabs</strong>, while a supported browser is the app in front, BrowserSearch checks every couple of seconds which tab that browser is showing. It only does this for browsers you've already allowed, and only while Recent tabs is turned on.</p>
 
     <h3>What BrowserSearch stores</h3>
-    <p>Only your settings: the search shortcut. Launch at login is managed by macOS.</p>
+    <ul>
+      <li>Your settings, such as the search shortcut. Launch at login is managed by macOS.</li>
+      <li>With Recent tabs on (the default): the title, URL, browser and time of the <strong>last 50 tabs</strong> you used. They are saved in BrowserSearch's preferences on your Mac so the list survives restarts.</li>
+    </ul>
+    <p>To remove them, click <strong>Clear Recent Tabs</strong> in Settings. To stop collecting them, turn off <strong>Remember recently used tabs</strong>. Turning a browser off in Settings › Browsers also stops tracking it.</p>
 
     <h3>Network access</h3>
     <p>None. BrowserSearch makes no network connections.</p>
@@ -38,7 +43,7 @@
     <ul>
       <li>No accounts or sign-in.</li>
       <li>No analytics, tracking, advertising or crash-reporting SDKs.</li>
-      <li>No browsing history, page contents, cookies or passwords are read.</li>
+      <li>No page contents, cookies, passwords or your browser's own history are read. The Recent list only contains tabs seen while BrowserSearch was running.</li>
       <li>No keystroke logging. BrowserSearch is only told when <em>your</em> search shortcut is pressed.</li>
     </ul>
 
