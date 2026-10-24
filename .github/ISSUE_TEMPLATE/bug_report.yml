@@ -1,0 +1,50 @@
+name: 🐞 Report a problem
+description: Something in BrowserSearch isn't working as expected.
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to report this! Please check the [troubleshooting guide](https://giridharmb.github.io/BrowserSearch_Docs/support.html) first.
+        **Don't paste tab titles or URLs you'd rather keep private — issues are public.**
+  - type: input
+    id: version
+    attributes:
+      label: BrowserSearch version
+      placeholder: "0.1.0 (1)"
+    validations:
+      required: true
+  - type: input
+    id: macos
+    attributes:
+      label: macOS version
+      placeholder: "macOS 26.1"
+    validations:
+      required: true
+  - type: dropdown
+    id: browser
+    attributes:
+      label: Browser
+      multiple: true
+      options:
+        - Google Chrome
+        - Safari
+        - Firefox
+        - Not browser-specific
+    validations:
+      required: true
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened?
+      description: What did you do, what did you expect, and what happened instead?
+      placeholder: |
+        1. Pressed ⌥Space with Chrome open
+        2. Typed "jira"
+        3. The matching tab wasn't listed
+    validations:
+      required: true
+  - type: textarea
+    id: extra
+    attributes:
+      label: Screenshots or anything else

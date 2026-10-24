@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Support · BrowserSearch</title>
+  <meta name="description" content="Troubleshooting and help for BrowserSearch.">
+  <link rel="icon" href="images/icon.svg">
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="index.html"><img src="images/icon.svg" alt="">BrowserSearch</a>
+    <nav class="nav">
+      <a href="index.html">Home</a>
+      <a href="docs.html">Docs</a>
+      <a href="support.html" aria-current="page">Support</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <section>
+    <h2>How can we help?</h2>
+    <p class="section-lead">Most answers are below. If yours isn't, open an issue on GitHub and we'll take a look.</p>
+    <div class="grid">
+      <a class="card" href="https://github.com/giridharmb/BrowserSearch_Docs/issues/new?template=bug_report.yml">
+        <span class="emoji">🐞</span><h3>Report a problem</h3><p>Something isn't working the way it should.</p>
+      </a>
+      <a class="card" href="https://github.com/giridharmb/BrowserSearch_Docs/issues/new?template=feature_request.yml">
+        <span class="emoji">💡</span><h3>Request a feature</h3><p>An idea that would make BrowserSearch better for you.</p>
+      </a>
+      <a class="card" href="docs.html">
+        <span class="emoji">📘</span><h3>Read the docs</h3><p>How search, the keyboard and permissions work.</p>
+      </a>
+    </div>
+  </section>
+
+  <section>
+    <h2>Troubleshooting</h2>
+    <details open>
+      <summary>Pressing the shortcut does nothing</summary>
+      <ol>
+        <li>Check that the magnifier icon is in your menu bar. If not, open BrowserSearch again.</li>
+        <li>Open <strong>Settings…</strong>. A red note under the shortcut means another app owns it. Record a different one.</li>
+        <li>Try choosing <strong>Search Tabs</strong> from the menu bar icon. If the panel opens, the problem is the shortcut, not the app.</li>
+      </ol>
+    </details>
+    <details>
+      <summary>Chrome or Safari tabs don't show up</summary>
+      <ol>
+        <li>The browser must already be open; BrowserSearch never launches it.</li>
+        <li>Open System Settings › Privacy &amp; Security › Automation, find BrowserSearch and turn on the browser.</li>
+        <li>If you clicked <strong>Don't Allow</strong> earlier and BrowserSearch isn't listed, run <code>tccutil reset AppleEvents com.giridharmb.BrowserSearch</code> in Terminal and search again to get the prompt back.</li>
+      </ol>
+    </details>
+    <details>
+      <summary>Firefox tabs don't show up</summary>
+      <p>Grant Accessibility: <strong>Settings… › Grant Accessibility…</strong>, then turn on BrowserSearch in System Settings › Privacy &amp; Security › Accessibility. The panel shows a reminder at the bottom while Firefox is open without access.</p>
+    </details>
+    <details>
+      <summary>Why don't Firefox results show a URL?</summary>
+      <p>Firefox doesn't let other apps read its tabs through scripting, so BrowserSearch reads the tab bar instead, which only has titles.</p>
+    </details>
+    <details>
+      <summary>Will you support Brave, Edge or Arc?</summary>
+      <p>They're on the list. <a href="https://github.com/giridharmb/BrowserSearch_Docs/issues/new?template=feature_request.yml">Ask for yours</a> so we know which matters most.</p>
+    </details>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 Giridhar Bhujanga · <a href="privacy.html">Privacy</a></span>
+    <span><a href="docs.html">Docs</a> · <a href="https://github.com/giridharmb/BrowserSearch_Docs/issues/new/choose">Report a problem</a></span>
+  </div>
+</footer>
+</body>
+</html>

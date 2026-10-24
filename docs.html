@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Docs · BrowserSearch</title>
+  <meta name="description" content="How to use BrowserSearch: hotkey, search, keyboard controls, browser support and permissions.">
+  <link rel="icon" href="images/icon.svg">
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="index.html"><img src="images/icon.svg" alt="">BrowserSearch</a>
+    <nav class="nav">
+      <a href="index.html">Home</a>
+      <a href="docs.html" aria-current="page">Docs</a>
+      <a href="support.html">Support</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap docs">
+  <nav class="toc" aria-label="On this page">
+    <a href="#start">Getting started</a>
+    <a href="#search">Searching</a>
+    <a href="#keys">Keyboard</a>
+    <a href="#browsers">Supported browsers</a>
+    <a href="#permissions">Permissions</a>
+    <a href="#settings">Settings</a>
+  </nav>
+
+  <article class="content">
+    <h2 id="start">Getting started</h2>
+    <ol>
+      <li>Open BrowserSearch. A magnifier icon appears in your menu bar.</li>
+      <li>Press <kbd>⌥Space</kbd> anywhere. The search panel opens in the middle of your screen.</li>
+      <li>The first time you search while Chrome or Safari is open, macOS asks whether BrowserSearch may control that browser. Click <strong>Allow</strong>.</li>
+      <li>Type, pick a tab with <kbd>↑</kbd> <kbd>↓</kbd>, press <kbd>↩</kbd>.</li>
+    </ol>
+    <div class="callout">Using Firefox? Open <strong>Settings… › Grant Accessibility…</strong> once. See <a href="#permissions">Permissions</a>.</div>
+
+    <h2 id="search">Searching</h2>
+    <p>Each tab is matched against its title, its URL and the browser's name.</p>
+    <ul>
+      <li><strong>Every word must match.</strong> <code>gh pull</code> finds “Pull requests · GitHub” but not “GitHub Home”.</li>
+      <li><strong>Letters can be skipped.</strong> <code>gthb</code> still finds GitHub.</li>
+      <li><strong>Exact text ranks first,</strong> and a match near the start of a title beats one near the end.</li>
+      <li><strong>Add a browser name</strong> to narrow it down: <code>safari docs</code>.</li>
+    </ul>
+    <p>With an empty search box the panel lists every open tab.</p>
+
+    <h2 id="keys">Keyboard</h2>
+    <div class="table-scroll"><table>
+      <tr><th>Key</th><th>Action</th></tr>
+      <tr><td><kbd>⌥Space</kbd> (default)</td><td>Open or close the panel</td></tr>
+      <tr><td><kbd>↑</kbd> / <kbd>↓</kbd></td><td>Move the selection (wraps around)</td></tr>
+      <tr><td><kbd>↩</kbd></td><td>Switch to the selected tab</td></tr>
+      <tr><td><kbd>Esc</kbd></td><td>Close the panel and return to what you were doing</td></tr>
+    </table></div>
+    <p>You can also click a result. Clicking outside the panel closes it.</p>
+
+    <h2 id="browsers">Supported browsers</h2>
+    <div class="table-scroll"><table>
+      <tr><th>Browser</th><th>Searches</th><th>Notes</th></tr>
+      <tr><td>Google Chrome</td><td>Title and URL</td><td>All windows and profiles that are open</td></tr>
+      <tr><td>Safari</td><td>Title and URL</td><td>All windows</td></tr>
+      <tr><td>Firefox</td><td>Title only</td><td>Needs Accessibility permission</td></tr>
+    </table></div>
+    <p>Browsers that aren't running are skipped. BrowserSearch never opens a browser just to search it.</p>
+
+    <h2 id="permissions">Permissions</h2>
+    <p><strong>Automation (Chrome, Safari).</strong> Lets BrowserSearch read tab titles and URLs and switch tabs. macOS asks once per browser. Review it in System Settings › Privacy &amp; Security › Automation.</p>
+    <p><strong>Accessibility (Firefox only).</strong> Firefox has no scripting support for tabs, so BrowserSearch reads Firefox's tab bar the way assistive tools do, and clicks the tab you pick. Turn it on with <strong>Settings… › Grant Accessibility…</strong>, then enable BrowserSearch in System Settings › Privacy &amp; Security › Accessibility.</p>
+
+    <h2 id="settings">Settings</h2>
+    <p>Open from the menu bar icon › <strong>Settings…</strong></p>
+    <ul>
+      <li><strong>Search shortcut.</strong> Click it and press a new combination. <kbd>Esc</kbd> cancels. Combinations another app already owns are refused.</li>
+      <li><strong>Launch at login.</strong> Starts BrowserSearch quietly when you log in. If macOS asks for approval, click <strong>Open Login Items</strong>.</li>
+      <li><strong>Permissions.</strong> Shows whether Firefox access is granted.</li>
+    </ul>
+  </article>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 Giridhar Bhujanga · <a href="privacy.html">Privacy</a></span>
+    <span><a href="docs.html">Docs</a> · <a href="support.html">Support</a> · <a href="https://github.com/giridharmb/BrowserSearch_Docs/issues/new/choose">Report a problem</a></span>
+  </div>
+</footer>
+</body>
+</html>
