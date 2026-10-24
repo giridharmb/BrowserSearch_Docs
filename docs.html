@@ -6,7 +6,7 @@
   <title>Docs · BrowserSearch</title>
   <meta name="description" content="How to use BrowserSearch: hotkey, the tab tree, search, recent tabs, keyboard controls, browser support, permissions and settings.">
   <link rel="icon" href="images/icon.png">
-  <link rel="stylesheet" href="assets/style.css?v=2">
+  <link rel="stylesheet" href="assets/style.css?v=4">
 </head>
 <body>
 <header class="site-header">
@@ -26,6 +26,7 @@
     <a href="#panel">The panel</a>
     <a href="#search">Searching</a>
     <a href="#recent">Recent tabs</a>
+    <a href="#tags">Hashtags &amp; groups</a>
     <a href="#keys">Keyboard</a>
     <a href="#browsers">Supported browsers</a>
     <a href="#permissions">Permissions</a>
@@ -62,6 +63,8 @@
       <li><strong>Letters can be skipped</strong> once you type three or more, as long as they're close together: <code>gthb</code> finds GitHub.</li>
       <li><strong>Exact text ranks first,</strong> and a match near the start beats one near the end. The browser with the best match is listed first.</li>
       <li><strong>Add a browser name</strong> to narrow it down: <code>safari docs</code>.</li>
+      <li><strong>Matched text is highlighted</strong> in bold in each title.</li>
+      <li><strong>Nothing open?</strong> When no tab matches, <kbd>↩</kbd> searches the web for what you typed in your default browser.</li>
     </ul>
 
     <h2 id="recent">Recent tabs</h2>
@@ -75,6 +78,19 @@
     </ul>
     <div class="callout">Turn on <strong>Open the panel on Recent</strong> in Settings to make jump-back a two-key habit. Recent tabs can be turned off or cleared at any time.</div>
 
+    <h2 id="tags">Hashtags &amp; groups</h2>
+    <p>Group tabs your way with hashtags, and let BrowserSearch group them by site for you.</p>
+    <img src="images/panel-tags.png" alt="The Tags view with site groups">
+    <ul>
+      <li><strong>Tag a tab:</strong> select it and press <kbd>⌘T</kbd>. Type tags like <code>#work #jira</code> (the <code>#</code> is optional), then <kbd>↩</kbd>. <kbd>esc</kbd> cancels; clear the box to remove tags.</li>
+      <li><strong>Tags follow the page,</strong> not the browser: the same address open in Chrome and Safari shares its tags, and they come back when you reopen it.</li>
+      <li><strong>Search by tag</strong> in any view: <code>#wo</code> shows tabs with a tag starting “wo”. Mix with text: <code>#work jira</code>.</li>
+      <li><strong>The # Tags view</strong> (<kbd>⇥</kbd> until it's selected) lists your tags, most used first, each with its tabs. <kbd>⌘↑</kbd> <kbd>⌘↓</kbd> jump between tags.</li>
+      <li><strong>Site groups</strong> appear below your tags automatically for any site with two or more open tabs (<code>github</code>, <code>atlassian</code>…), marked “site”.</li>
+      <li><strong>Click a tag chip</strong> on a result to show everything with that tag.</li>
+    </ul>
+    <p>Firefox tabs have no address available, so they're tagged by title.</p>
+
     <h2 id="keys">Keyboard</h2>
     <div class="table-scroll"><table>
       <tr><th>Key</th><th>Action</th></tr>
@@ -84,7 +100,8 @@
       <tr><td><kbd>⌘↑</kbd> / <kbd>⌘↓</kbd></td><td>Jump to the previous / next browser</td></tr>
       <tr><td><kbd>↩</kbd></td><td>Switch to the selected tab</td></tr>
       <tr><td><kbd>⌘1</kbd>–<kbd>⌘9</kbd></td><td>Switch to result 1–9</td></tr>
-      <tr><td><kbd>⇥</kbd></td><td>Toggle All Tabs and Recent</td></tr>
+      <tr><td><kbd>⇥</kbd></td><td>Cycle All Tabs, Recent and # Tags</td></tr>
+      <tr><td><kbd>⌘T</kbd></td><td>Add or edit the selected tab's hashtags</td></tr>
       <tr><td><kbd>⌘W</kbd></td><td>Close the selected tab in its browser (Chrome, Safari)</td></tr>
       <tr><td><kbd>⌘C</kbd></td><td>Copy the selected tab's address (copies text instead if you've selected some in the search box)</td></tr>
       <tr><td><kbd>⌘R</kbd></td><td>Reload the tab list</td></tr>
@@ -97,8 +114,10 @@
       <tr><th>Browser</th><th>Searches</th><th>Close tab</th><th>Recent</th></tr>
       <tr><td>Google Chrome</td><td>Title and address</td><td>Yes</td><td>Yes</td></tr>
       <tr><td>Safari</td><td>Title and address</td><td>Yes</td><td>Yes</td></tr>
+      <tr><td>Brave, Microsoft Edge, Vivaldi</td><td>Title and address</td><td>Yes</td><td>Yes</td></tr>
       <tr><td>Firefox</td><td>Title only</td><td>No</td><td>Yes, but closed Firefox tabs can't be reopened</td></tr>
     </table></div>
+    <div class="callout">The <strong>Mac App Store edition</strong> doesn't include Firefox: reading Firefox tabs needs Accessibility access, which App Store apps can't use. Everything else is the same.</div>
     <p>Browsers that aren't running are skipped. BrowserSearch never opens a browser just to search it.</p>
 
     <h2 id="permissions">Permissions</h2>
@@ -109,14 +128,18 @@
     <p>Open from the menu bar icon › <strong>Settings…</strong>, or open BrowserSearch again from Finder or Spotlight.</p>
     <h3>General</h3>
     <ul>
-      <li><strong>Search shortcut.</strong> Click it and press a new combination. <kbd>esc</kbd> cancels. Combinations another app already owns are refused.</li>
+      <li><strong>Search shortcut.</strong> Click it and press a new combination. <kbd>esc</kbd> cancels. BrowserSearch checks it against macOS shortcuts, other apps' global hotkeys, your custom App Shortcuts and Services, and the default shortcuts of launchers you have installed (ChatGPT, Raycast, Alfred). A combination that wouldn't reach BrowserSearch asks before it's used; softer clashes, like <kbd>⌘F</kbd> which every app uses for Find, are shown as warnings under the shortcut.</li>
       <li><strong>Launch at login.</strong> Starts BrowserSearch quietly in the menu bar when you log in. If macOS asks for approval, click <strong>Open Login Items</strong>.</li>
       <li><strong>Show in menu bar.</strong> Turn off for a clean menu bar. The shortcut keeps working; open BrowserSearch from Finder or Spotlight to get back to Settings.</li>
+    </ul>
+    <h3>Search</h3>
+    <ul>
       <li><strong>Match web addresses.</strong> On by default. Turn off to search tab titles only.</li>
       <li><strong>Show web addresses in results.</strong> Hide the address line for a more compact list.</li>
       <li><strong>Remember recently used tabs.</strong> Turns the Recent view on or off.</li>
       <li><strong>Open the panel on Recent.</strong> Start in Recent instead of All Tabs.</li>
       <li><strong>Clear Recent Tabs.</strong> Forgets the list.</li>
+      <li><strong>Hashtags › Clear All Tags.</strong> Removes every tag you've added.</li>
     </ul>
     <h3>Browsers</h3>
     <ul>

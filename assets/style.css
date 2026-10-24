@@ -117,13 +117,16 @@ kbd { border-bottom-width: 2px; white-space: nowrap; }
 .viewer .caption { color: var(--muted); font-size: 15px; margin-top: 16px; display: none; }
 #v-all:checked ~ .switch label[for="v-all"],
 #v-search:checked ~ .switch label[for="v-search"],
-#v-recent:checked ~ .switch label[for="v-recent"] { background: var(--grad); color: #fff; }
+#v-recent:checked ~ .switch label[for="v-recent"],
+#v-tags:checked ~ .switch label[for="v-tags"] { background: var(--grad); color: #fff; }
 #v-all:checked ~ .frames .f-all,
 #v-search:checked ~ .frames .f-search,
-#v-recent:checked ~ .frames .f-recent { display: block; }
+#v-recent:checked ~ .frames .f-recent,
+#v-tags:checked ~ .frames .f-tags { display: block; }
 #v-all:focus-visible ~ .switch label[for="v-all"],
 #v-search:focus-visible ~ .switch label[for="v-search"],
-#v-recent:focus-visible ~ .switch label[for="v-recent"] { outline: 2px solid var(--blue); outline-offset: 2px; }
+#v-recent:focus-visible ~ .switch label[for="v-recent"],
+#v-tags:focus-visible ~ .switch label[for="v-tags"] { outline: 2px solid var(--blue); outline-offset: 2px; }
 
 /* Sections */
 section { padding: 56px 0; }

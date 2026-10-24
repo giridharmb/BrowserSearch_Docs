@@ -6,7 +6,7 @@
   <title>Support · BrowserSearch</title>
   <meta name="description" content="Troubleshooting and help for BrowserSearch.">
   <link rel="icon" href="images/icon.png">
-  <link rel="stylesheet" href="assets/style.css?v=2">
+  <link rel="stylesheet" href="assets/style.css?v=4">
 </head>
 <body>
 <header class="site-header">
@@ -46,6 +46,18 @@
         <li>Open <strong>Settings…</strong>. A red note under the shortcut means another app owns it. Record a different one.</li>
         <li>Try choosing <strong>Search Tabs</strong> from the menu bar icon. If the panel opens, the problem is the shortcut, not the app.</li>
       </ol>
+    </details>
+    <details>
+      <summary>Settings shows a warning under my shortcut</summary>
+      <p>BrowserSearch checks your shortcut against macOS, other apps and common launchers. <strong>Red</strong> means the shortcut won't reach BrowserSearch (macOS or another running app owns it): record a different one. <strong>Orange</strong> means it works but clashes with something, for example <kbd>⌘F</kbd> would replace Find in every app, and ChatGPT, Raycast and Alfred use <kbd>⌥Space</kbd> by default. Shortcuts with <kbd>⌃⌥</kbd> are rarely taken.</p>
+    </details>
+    <details>
+      <summary>How do I group tabs?</summary>
+      <p>Select a tab and press <kbd>⌘T</kbd>, type <code>#work</code> and press <kbd>↩</kbd>. Then type <code>#work</code> in the panel, or press <kbd>⇥</kbd> to the <strong># Tags</strong> view. Sites with several open tabs are grouped there automatically.</p>
+    </details>
+    <details>
+      <summary>Why doesn't the App Store version support Firefox?</summary>
+      <p>Firefox can only be read through Accessibility, which apps from the Mac App Store aren't allowed to use. The direct-download edition supports Firefox.</p>
     </details>
     <details>
       <summary>The menu bar icon is gone</summary>

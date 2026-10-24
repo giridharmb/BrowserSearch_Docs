@@ -12,8 +12,10 @@ and press **↩**. BrowserSearch switches to that browser, raises the right wind
 - Global hotkey that works from any app, configurable in Settings
 - Tabs grouped by browser and window; fuzzy search as you type (`gh pull`, initials like `pr`)
 - Recent tabs: a live most-recently-used list across browsers, with jump-back and reopen
+- Hashtags: ⌘T to tag a tab `#work`, `#tag` to filter, a # Tags view with automatic site groups
+- Shortcut conflict warnings (macOS, other apps, launchers like Raycast/Alfred/ChatGPT)
 - ⌘1–9 to jump, ⌘W to close a tab, ⌘C to copy its address, Esc to dismiss
-- Searches Google Chrome, Safari and Firefox at the same time; only browsers that are already open are searched
+- Searches Chrome, Safari, Brave, Edge, Vivaldi and Firefox at once; only browsers that are already open are searched
 - Lives in the menu bar, optional launch at login
 - Nothing leaves your Mac: no network access; recent tabs are stored locally and can be cleared
 
@@ -38,7 +40,8 @@ You can review or revoke these in System Settings → Privacy & Security.
 | ↑ / ↓ | Move the selection |
 | ↩ | Switch to the selected tab |
 | ⌘1–9 | Switch to result 1–9 |
-| ⇥ | All tabs ⇄ Recent |
+| ⇥ | All tabs · Recent · Tags |
+| ⌘T | Tag the selected tab |
 | ⌘W / ⌘C | Close tab / copy its address |
 | Esc | Close |
 
