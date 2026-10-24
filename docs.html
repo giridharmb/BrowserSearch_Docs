@@ -5,13 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Docs · BrowserSearch</title>
   <meta name="description" content="How to use BrowserSearch: hotkey, search, keyboard controls, browser support and permissions.">
-  <link rel="icon" href="images/icon.svg">
+  <link rel="icon" href="images/icon.png">
   <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
 <header class="site-header">
   <div class="wrap">
-    <a class="brand" href="index.html"><img src="images/icon.svg" alt="">BrowserSearch</a>
+    <a class="brand" href="index.html"><img src="images/icon.png" alt="">BrowserSearch</a>
     <nav class="nav">
       <a href="index.html">Home</a>
       <a href="docs.html" aria-current="page">Docs</a>
@@ -74,12 +74,23 @@
     <p><strong>Accessibility (Firefox only).</strong> Firefox has no scripting support for tabs, so BrowserSearch reads Firefox's tab bar the way assistive tools do, and clicks the tab you pick. Turn it on with <strong>Settings… › Grant Accessibility…</strong>, then enable BrowserSearch in System Settings › Privacy &amp; Security › Accessibility.</p>
 
     <h2 id="settings">Settings</h2>
-    <p>Open from the menu bar icon › <strong>Settings…</strong></p>
+    <p>Open from the menu bar icon › <strong>Settings…</strong>, or open BrowserSearch again from Finder or Spotlight. Settings also opens by itself the first time you run BrowserSearch.</p>
+    <h3>General</h3>
     <ul>
       <li><strong>Search shortcut.</strong> Click it and press a new combination. <kbd>Esc</kbd> cancels. Combinations another app already owns are refused.</li>
-      <li><strong>Launch at login.</strong> Starts BrowserSearch quietly when you log in. If macOS asks for approval, click <strong>Open Login Items</strong>.</li>
-      <li><strong>Permissions.</strong> Shows whether Firefox access is granted.</li>
+      <li><strong>Launch at login.</strong> Starts BrowserSearch quietly in the menu bar when you log in. If macOS asks for approval, click <strong>Open Login Items</strong>.</li>
+      <li><strong>Show in menu bar.</strong> Turn off for a clean menu bar. The shortcut keeps working; open BrowserSearch from Finder or Spotlight to get back to Settings.</li>
+      <li><strong>Match web addresses.</strong> On by default. Turn off to search tab titles only.</li>
+      <li><strong>Show web addresses in results.</strong> Hide the URL line for a more compact list.</li>
     </ul>
+    <h3>Browsers</h3>
+    <ul>
+      <li><strong>On/off per browser.</strong> Leave out a browser you don't want searched.</li>
+      <li><strong>Permission status</strong> for each browser, with <strong>Allow…</strong> (Chrome, Safari) or <strong>Grant…</strong> (Firefox) to ask for it right away instead of on first search.</li>
+      <li><strong>Open Privacy &amp; Security Settings</strong> to review or revoke access.</li>
+    </ul>
+    <h3>About</h3>
+    <p>Version, and links to these docs, support and the issue tracker.</p>
   </article>
 </main>
 
