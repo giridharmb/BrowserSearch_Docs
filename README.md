@@ -12,7 +12,11 @@ and press **↩**. BrowserSearch switches to that browser, raises the right wind
 - Global hotkey that works from any app, configurable in Settings
 - Tabs grouped by browser and window; fuzzy search as you type (`gh pull`, initials like `pr`)
 - Recent tabs: a live most-recently-used list across browsers, with jump-back and reopen
-- Hashtags: ⌘T to tag a tab `#work`, `#tag` to filter, a # Tags view with automatic site groups
+- Saved tab groups: ⌘T to tag tabs `#work`, `#tag` to filter, ⌘↩ reopens a whole group; automatic site groups
+- Bulk actions: mark with ⇧↑↓ / ⌘-click / ⌘A, then close, tag, pin, move or copy as Markdown links
+- Duplicate finder (⌘D), Stale view for tabs you haven't looked at in a week
+- Pins (⌘P) and keywords (⌘K: type `jira` ↩ to jump), move to front window (⌘M), open in another browser (⌘O)
+- Page text search (⌘F), previous-tab shortcut (⌃⌥⇥), Shortcuts/Siri actions
 - Shortcut conflict warnings (macOS, other apps, launchers like Raycast/Alfred/ChatGPT)
 - ⌘1–9 to jump, ⌘W to close a tab, ⌘C to copy its address, Esc to dismiss
 - Searches Chrome, Safari, Brave, Edge, Vivaldi and Firefox at once; only browsers that are already open are searched
@@ -40,8 +44,12 @@ You can review or revoke these in System Settings → Privacy & Security.
 | ↑ / ↓ | Move the selection |
 | ↩ | Switch to the selected tab |
 | ⌘1–9 | Switch to result 1–9 |
-| ⇥ | All tabs · Recent · Tags |
-| ⌘T | Tag the selected tab |
+| ⇥ | All tabs · Recent · Tags · Stale |
+| ⇧↑↓ / ⌘A | Mark tabs / mark all |
+| ⌘T / ⌘K / ⌘P | Tag / keyword / pin |
+| ⌘D / ⌘M / ⌘O | Close duplicates / move to front window / open in another browser |
+| ⌘F / ⌘/ | Search page text / show every key |
+| ⌃⌥⇥ | Previous tab, from anywhere |
 | ⌘W / ⌘C | Close tab / copy its address |
 | Esc | Close |
 

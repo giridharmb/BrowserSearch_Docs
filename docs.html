@@ -6,7 +6,7 @@
   <title>Docs · BrowserSearch</title>
   <meta name="description" content="How to use BrowserSearch: hotkey, the tab tree, search, recent tabs, keyboard controls, browser support, permissions and settings.">
   <link rel="icon" href="images/icon.png">
-  <link rel="stylesheet" href="assets/style.css?v=4">
+  <link rel="stylesheet" href="assets/style.css?v=5">
 </head>
 <body>
 <header class="site-header">
@@ -26,7 +26,14 @@
     <a href="#panel">The panel</a>
     <a href="#search">Searching</a>
     <a href="#recent">Recent tabs</a>
-    <a href="#tags">Hashtags &amp; groups</a>
+    <a href="#tags">Hashtags &amp; saved groups</a>
+    <a href="#bulk">Bulk actions</a>
+    <a href="#pins">Pins &amp; keywords</a>
+    <a href="#tidy">Duplicates &amp; stale tabs</a>
+    <a href="#move">Moving tabs</a>
+    <a href="#pagetext">Searching page text</a>
+    <a href="#previous">Previous-tab shortcut</a>
+    <a href="#shortcuts">Shortcuts &amp; Siri</a>
     <a href="#keys">Keyboard</a>
     <a href="#browsers">Supported browsers</a>
     <a href="#permissions">Permissions</a>
@@ -78,9 +85,9 @@
     </ul>
     <div class="callout">Turn on <strong>Open the panel on Recent</strong> in Settings to make jump-back a two-key habit. Recent tabs can be turned off or cleared at any time.</div>
 
-    <h2 id="tags">Hashtags &amp; groups</h2>
-    <p>Group tabs your way with hashtags, and let BrowserSearch group them by site for you.</p>
-    <img src="images/panel-tags.png" alt="The Tags view with site groups">
+    <h2 id="tags">Hashtags &amp; saved groups</h2>
+    <p>Group tabs your way with hashtags, and let BrowserSearch group them by site for you. A hashtag is also a <strong>saved tab group</strong>: it remembers its pages after you close them.</p>
+    <img src="images/panel-tags.png" alt="The Tags view with #work, #review and #reading groups">
     <ul>
       <li><strong>Tag a tab:</strong> select it and press <kbd>⌘T</kbd>. Type tags like <code>#work #jira</code> (the <code>#</code> is optional), then <kbd>↩</kbd>. <kbd>esc</kbd> cancels; clear the box to remove tags.</li>
       <li><strong>Tags follow the page,</strong> not the browser: the same address open in Chrome and Safari shares its tags, and they come back when you reopen it.</li>
@@ -88,8 +95,56 @@
       <li><strong>The # Tags view</strong> (<kbd>⇥</kbd> until it's selected) lists your tags, most used first, each with its tabs. <kbd>⌘↑</kbd> <kbd>⌘↓</kbd> jump between tags.</li>
       <li><strong>Site groups</strong> appear below your tags automatically for any site with two or more open tabs (<code>github</code>, <code>atlassian</code>…), marked “site”.</li>
       <li><strong>Click a tag chip</strong> on a result to show everything with that tag.</li>
+      <li><strong>Reopen a whole group:</strong> in the # Tags view, select any tab in a group and press <kbd>⌘↩</kbd>. Pages you closed show as <em>closed · reopen</em> and come back in the browser they were in; tabs that are still open aren't duplicated.</li>
+      <li><strong>Tag many tabs at once:</strong> mark them (see <a href="#bulk">Bulk actions</a>) and press <kbd>⌘T</kbd>; the tags you type are added to each.</li>
     </ul>
-    <p>Firefox tabs have no address available, so they're tagged by title.</p>
+    <p>Firefox tabs have no address available, so they're tagged by title and can't be reopened once closed.</p>
+
+    <h2 id="bulk">Bulk actions</h2>
+    <img src="images/panel-marked.png" alt="Three tabs marked, with the bulk action keys at the bottom">
+    <p>Mark tabs, then act on all of them with one key.</p>
+    <ul>
+      <li><strong>Mark:</strong> <kbd>⇧↑</kbd> / <kbd>⇧↓</kbd> marks as you move, <kbd>⌘</kbd>-click marks one, <kbd>⌘A</kbd> marks everything listed (again to clear). Search first to narrow what <kbd>⌘A</kbd> takes.</li>
+      <li><strong>Then:</strong> <kbd>⌘W</kbd> closes them, <kbd>⌘T</kbd> tags them, <kbd>⌘P</kbd> pins them, <kbd>⌘M</kbd> moves them to the front window, <kbd>⌘O</kbd> opens them in another browser, <kbd>⌘↩</kbd> opens them all.</li>
+      <li><strong>Copy as Markdown:</strong> <kbd>⌘C</kbd> with several tabs marked copies a list of links, ready to paste into notes or a chat: <code>- [Title](https://…)</code>. With one tab it copies just its address.</li>
+    </ul>
+
+    <h2 id="pins">Pins &amp; keywords</h2>
+    <ul>
+      <li><strong>Pin</strong> with <kbd>⌘P</kbd>: pinned tabs sit in a <em>Pinned</em> section at the top of All Tabs, so <kbd>⌘1</kbd> is always your most important tab. <kbd>⌘P</kbd> again unpins.</li>
+      <li><strong>Keyword</strong> with <kbd>⌘K</kbd>: give a tab a short word such as <code>jira</code>. Typing exactly that word shows it first under <em>Keyword</em>, so shortcut, <code>jira</code>, <kbd>↩</kbd> always lands there, and reopens it if the tab was closed. A keyword belongs to one page; giving it to another page moves it. Clear the box to remove it.</li>
+    </ul>
+
+    <h2 id="tidy">Duplicates &amp; stale tabs</h2>
+    <img src="images/panel-stale.png" alt="The Stale view listing tabs not looked at for a week">
+    <ul>
+      <li><strong>Duplicates:</strong> a page open more than once (in any browser, ignoring <code>https</code>, <code>www.</code> and <code>#section</code> differences) gets a <strong>2×</strong> badge. <kbd>⌘D</kbd> closes the extra copies among the tabs listed, keeping the one showing in its window. Search first to limit it, for example to one site.</li>
+      <li><strong>Stale view</strong> (<kbd>⇥</kbd> to <em>Stale</em>): open tabs you haven't looked at for 7 days, oldest first, with when you last saw each. Mark them all with <kbd>⌘A</kbd> and close with <kbd>⌘W</kbd>. Change the number of days in Settings › Organize.</li>
+      <li>“Looked at” means the tab was in front in its browser while BrowserSearch was running. Tabs never seen only count as stale once BrowserSearch has been running for that many days, so nothing shows up right after installing.</li>
+    </ul>
+
+    <h2 id="move">Moving tabs</h2>
+    <ul>
+      <li><strong>⌘M</strong> brings the selected (or marked) tabs into the browser's front window, the one you're working in.</li>
+      <li><strong>⌘O</strong> opens them in another browser instead: pick it with a number key or a click. The page opens there and the original tab closes.</li>
+    </ul>
+    <p>Safari moves tabs as they are. Chrome, Brave, Edge and Vivaldi can't move a tab between windows from outside, so BrowserSearch reopens the page in the front window and closes the original; that tab's back history doesn't come along. Firefox tabs can't be moved from the panel.</p>
+
+    <h2 id="pagetext">Searching page text</h2>
+    <p>Press <kbd>⌘F</kbd> in the panel to also match the text inside pages: results that matched only in the page show a short snippet of where. Press it again to turn it off.</p>
+    <div class="callout warn">This needs the browser's <strong>Allow JavaScript from Apple Events</strong> setting, which is off by default. Chrome: <em>View › Developer › Allow JavaScript from Apple Events</em>. Safari: turn on <em>Settings › Advanced › Show features for web developers</em>, then <em>Develop › Developer Settings… › Allow JavaScript from Apple Events</em>. Page text is read only when you press <kbd>⌘F</kbd>, kept in memory while the panel is open, and never stored.</div>
+    <p>If your search shortcut is <kbd>⌘F</kbd>, pressing it in the panel closes the panel instead; Settings warns about this. Pick another shortcut to use page search.</p>
+
+    <h2 id="previous">Previous-tab shortcut</h2>
+    <p><kbd>⌃⌥⇥</kbd> (change or turn off in Settings › General) jumps straight back to the tab you used before the current one, without opening the panel. Press it again to come back, like <kbd>⌘⇥</kbd> for apps but for browser tabs, across browsers. From another app, it returns to the last tab you used.</p>
+
+    <h2 id="shortcuts">Shortcuts &amp; Siri</h2>
+    <p>BrowserSearch adds three actions to the Shortcuts app (and to Siri and Spotlight):</p>
+    <ul>
+      <li><strong>Find Tab</strong>: switches to the best match for some text; keywords and <code>#tags</code> work too.</li>
+      <li><strong>Open Tab Group</strong>: opens every page with a hashtag, reopening closed ones. Good for a “Start work” shortcut.</li>
+      <li><strong>Go to Previous Tab</strong>.</li>
+    </ul>
 
     <h2 id="keys">Keyboard</h2>
     <div class="table-scroll"><table>
@@ -97,14 +152,25 @@
       <tr><td><kbd>⌥Space</kbd> (default)</td><td>Open or close the panel</td></tr>
       <tr><td><kbd>↑</kbd> / <kbd>↓</kbd></td><td>Move the selection (wraps around)</td></tr>
       <tr><td><kbd>⇞</kbd> / <kbd>⇟</kbd></td><td>Move eight rows at a time</td></tr>
-      <tr><td><kbd>⌘↑</kbd> / <kbd>⌘↓</kbd></td><td>Jump to the previous / next browser</td></tr>
+      <tr><td><kbd>⌘↑</kbd> / <kbd>⌘↓</kbd></td><td>Jump to the previous / next group (browser, section or tag)</td></tr>
       <tr><td><kbd>↩</kbd></td><td>Switch to the selected tab</td></tr>
       <tr><td><kbd>⌘1</kbd>–<kbd>⌘9</kbd></td><td>Switch to result 1–9</td></tr>
-      <tr><td><kbd>⇥</kbd></td><td>Cycle All Tabs, Recent and # Tags</td></tr>
-      <tr><td><kbd>⌘T</kbd></td><td>Add or edit the selected tab's hashtags</td></tr>
-      <tr><td><kbd>⌘W</kbd></td><td>Close the selected tab in its browser (Chrome, Safari)</td></tr>
-      <tr><td><kbd>⌘C</kbd></td><td>Copy the selected tab's address (copies text instead if you've selected some in the search box)</td></tr>
+      <tr><td><kbd>⇥</kbd></td><td>Cycle All Tabs, Recent, # Tags and Stale</td></tr>
+      <tr><td><kbd>⇧↑</kbd> / <kbd>⇧↓</kbd>, <kbd>⌘</kbd>-click</td><td>Mark tabs for a bulk action</td></tr>
+      <tr><td><kbd>⌘A</kbd></td><td>Mark every tab listed / clear marks</td></tr>
+      <tr><td><kbd>⌘↩</kbd></td><td>Open the marked tabs, or in # Tags the whole group (reopening closed pages)</td></tr>
+      <tr><td><kbd>⌘T</kbd></td><td>Hashtags for the selected or marked tabs</td></tr>
+      <tr><td><kbd>⌘K</kbd></td><td>Keyword for the selected tab</td></tr>
+      <tr><td><kbd>⌘P</kbd></td><td>Pin / unpin</td></tr>
+      <tr><td><kbd>⌘W</kbd></td><td>Close the selected or marked tabs (not Firefox)</td></tr>
+      <tr><td><kbd>⌘D</kbd></td><td>Close duplicate tabs among those listed</td></tr>
+      <tr><td><kbd>⌘M</kbd></td><td>Move to the browser's front window</td></tr>
+      <tr><td><kbd>⌘O</kbd></td><td>Open in another browser (then a number to pick it)</td></tr>
+      <tr><td><kbd>⌘C</kbd></td><td>Copy the address, or Markdown links for marked tabs (plain text copy if you've selected text in the search box)</td></tr>
+      <tr><td><kbd>⌘F</kbd></td><td>Also search the text inside pages</td></tr>
       <tr><td><kbd>⌘R</kbd></td><td>Reload the tab list</td></tr>
+      <tr><td><kbd>⌘/</kbd></td><td>Show every key</td></tr>
+      <tr><td><kbd>⌃⌥⇥</kbd> (anywhere)</td><td>Jump to the previous tab</td></tr>
       <tr><td><kbd>esc</kbd></td><td>Close the panel and return to what you were doing</td></tr>
     </table></div>
     <p>You can also click any result.</p>
@@ -128,7 +194,8 @@
     <p>Open from the menu bar icon › <strong>Settings…</strong>, or open BrowserSearch again from Finder or Spotlight.</p>
     <h3>General</h3>
     <ul>
-      <li><strong>Search shortcut.</strong> Click it and press a new combination. <kbd>esc</kbd> cancels. BrowserSearch checks it against macOS shortcuts, other apps' global hotkeys, your custom App Shortcuts and Services, and the default shortcuts of launchers you have installed (ChatGPT, Raycast, Alfred). A combination that wouldn't reach BrowserSearch asks before it's used; softer clashes, like <kbd>⌘F</kbd> which every app uses for Find, are shown as warnings under the shortcut.</li>
+      <li><strong>Search shortcut.</strong> Click it and press a new combination. <kbd>esc</kbd> cancels. BrowserSearch checks it against macOS shortcuts, other apps' global hotkeys, your custom App Shortcuts and Services, and the default shortcuts of launchers you have installed (ChatGPT, Raycast, Alfred). A combination that wouldn't reach BrowserSearch asks before it's used; softer clashes, like <kbd>⌘F</kbd> which every app uses for Find (and the panel uses for page search), are shown as warnings under the shortcut.</li>
+      <li><strong>Previous tab shortcut.</strong> <kbd>⌃⌥⇥</kbd> by default; record another, or turn it off with the ✕. See <a href="#previous">Previous-tab shortcut</a>.</li>
       <li><strong>Launch at login.</strong> Starts BrowserSearch quietly in the menu bar when you log in. If macOS asks for approval, click <strong>Open Login Items</strong>.</li>
       <li><strong>Show in menu bar.</strong> Turn off for a clean menu bar. The shortcut keeps working; open BrowserSearch from Finder or Spotlight to get back to Settings.</li>
     </ul>
@@ -139,7 +206,12 @@
       <li><strong>Remember recently used tabs.</strong> Turns the Recent view on or off.</li>
       <li><strong>Open the panel on Recent.</strong> Start in Recent instead of All Tabs.</li>
       <li><strong>Clear Recent Tabs.</strong> Forgets the list.</li>
+    </ul>
+    <h3>Organize</h3>
+    <ul>
       <li><strong>Hashtags › Clear All Tags.</strong> Removes every tag you've added.</li>
+      <li><strong>Keywords &amp; Pins › Clear Keywords &amp; Pins.</strong></li>
+      <li><strong>Stale after N days.</strong> How long a tab can go without a look before the Stale view lists it (1–60, default 7).</li>
     </ul>
     <h3>Browsers</h3>
     <ul>

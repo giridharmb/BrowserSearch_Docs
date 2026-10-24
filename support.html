@@ -6,7 +6,7 @@
   <title>Support · BrowserSearch</title>
   <meta name="description" content="Troubleshooting and help for BrowserSearch.">
   <link rel="icon" href="images/icon.png">
-  <link rel="stylesheet" href="assets/style.css?v=4">
+  <link rel="stylesheet" href="assets/style.css?v=5">
 </head>
 <body>
 <header class="site-header">
@@ -52,8 +52,24 @@
       <p>BrowserSearch checks your shortcut against macOS, other apps and common launchers. <strong>Red</strong> means the shortcut won't reach BrowserSearch (macOS or another running app owns it): record a different one. <strong>Orange</strong> means it works but clashes with something, for example <kbd>⌘F</kbd> would replace Find in every app, and ChatGPT, Raycast and Alfred use <kbd>⌥Space</kbd> by default. Shortcuts with <kbd>⌃⌥</kbd> are rarely taken.</p>
     </details>
     <details>
+      <summary>⌘F in the panel closes it instead of searching page text</summary>
+      <p>Your search shortcut is <kbd>⌘F</kbd>, and a global shortcut always wins over the panel's own keys. Pick a different shortcut in Settings › General (<kbd>⌃⌥Space</kbd> is rarely taken); Settings shows a warning for any shortcut that collides with a panel key.</p>
+    </details>
+    <details>
+      <summary>Page search says it needs “Allow JavaScript from Apple Events”</summary>
+      <p>Browsers block other apps from reading page text unless you allow it. Chrome: <em>View › Developer › Allow JavaScript from Apple Events</em>. Safari: <em>Settings › Advanced › Show features for web developers</em>, then <em>Develop › Developer Settings… › Allow JavaScript from Apple Events</em>. Titles and addresses are searched without it.</p>
+    </details>
+    <details>
+      <summary>The Stale view is empty</summary>
+      <p>Tabs only count as stale after going unlooked-at for the number of days in Settings › Organize (7 by default), counted from when BrowserSearch started noticing. Give it a week, or lower the number.</p>
+    </details>
+    <details>
+      <summary>A moved Chrome tab lost its back history</summary>
+      <p>Chrome can't move a tab between windows from outside, so <kbd>⌘M</kbd> and <kbd>⌘O</kbd> reopen the page and close the original. Safari moves tabs as they are.</p>
+    </details>
+    <details>
       <summary>How do I group tabs?</summary>
-      <p>Select a tab and press <kbd>⌘T</kbd>, type <code>#work</code> and press <kbd>↩</kbd>. Then type <code>#work</code> in the panel, or press <kbd>⇥</kbd> to the <strong># Tags</strong> view. Sites with several open tabs are grouped there automatically.</p>
+      <p>Select a tab (or mark several with <kbd>⇧↓</kbd>) and press <kbd>⌘T</kbd>, type <code>#work</code> and press <kbd>↩</kbd>. Then type <code>#work</code> in the panel, or press <kbd>⇥</kbd> to the <strong># Tags</strong> view. <kbd>⌘↩</kbd> on a group opens all of it, reopening pages you've closed.</p>
     </details>
     <details>
       <summary>Why doesn't the App Store version support Firefox?</summary>

@@ -6,7 +6,7 @@
   <title>BrowserSearch for macOS</title>
   <meta name="description" content="BrowserSearch finds any open tab in Chrome, Safari or Firefox with a keystroke. Tabs grouped by browser and window, fuzzy search, recent tabs, and it jumps straight to the right tab.">
   <link rel="icon" href="images/icon.png">
-  <link rel="stylesheet" href="assets/style.css?v=4">
+  <link rel="stylesheet" href="assets/style.css?v=5">
 </head>
 <body>
 <header class="site-header">
@@ -36,16 +36,22 @@
       <input type="radio" name="view" id="v-search">
       <input type="radio" name="view" id="v-recent">
       <input type="radio" name="view" id="v-tags">
+      <input type="radio" name="view" id="v-marked">
+      <input type="radio" name="view" id="v-stale">
       <div class="switch" role="tablist" aria-label="Screenshots">
         <label for="v-all">All tabs</label>
         <label for="v-search">Searching</label>
         <label for="v-recent">Recent</label>
         <label for="v-tags"># Tags</label>
+        <label for="v-marked">Bulk actions</label>
+        <label for="v-stale">Stale</label>
       </div>
       <div class="frames">
         <img class="f-all" src="images/panel-all.png" alt="The BrowserSearch panel listing tabs grouped under Chrome and Safari, and by window">
         <img class="f-search" src="images/panel-search.png" alt="Typing 'store' narrows the list to the two matching Chrome tabs">
-        <img class="f-tags" src="images/panel-tags.png" alt="The Tags view grouping tabs under site groups like github and example">
+        <img class="f-tags" src="images/panel-tags.png" alt="The Tags view: #work, #review and #reading groups, including a closed page that can be reopened">
+        <img class="f-marked" src="images/panel-marked.png" alt="Three tabs marked, with close, tag and copy-links actions">
+        <img class="f-stale" src="images/panel-stale.png" alt="The Stale view listing tabs not looked at in 7 days">
         <img class="f-recent" src="images/panel-recent.png" alt="The Recent list showing the most recently used tabs, newest first, with the previous tab preselected">
       </div>
     </div>
@@ -74,17 +80,24 @@
       <div class="grid">
         <div class="card"><span class="emoji">🌳</span><h3>Organized like your Mac</h3><p>Tabs grouped by browser, then by window, with the tab each window is showing marked.</p></div>
         <div class="card"><span class="emoji">🔎</span><h3>Fuzzy search</h3><p>Titles and addresses. <code>store</code>, <code>gh pull</code>, or just initials: <code>pr</code> finds “Pull requests”.</p></div>
-        <div class="card"><span class="emoji">#️⃣</span><h3>Hashtag groups <span class="tag new">new</span></h3><p>Press <kbd>⌘T</kbd> to tag a tab <code>#work</code>. Type <code>#wo</code> to see just those, or open the <strong># Tags</strong> view.</p></div>
-        <div class="card"><span class="emoji">🌐</span><h3>Automatic site groups <span class="tag new">new</span></h3><p>Tabs from the same site group themselves in the Tags view: every GitHub tab under <code>github</code>, no setup.</p></div>
+        <div class="card"><span class="emoji">#️⃣</span><h3>Saved tab groups <span class="tag new">new</span></h3><p>Tag tabs <code>#work</code> with <kbd>⌘T</kbd>. <kbd>⌘↩</kbd> reopens the whole group later, even tabs you closed.</p></div>
+        <div class="card"><span class="emoji">☑️</span><h3>Bulk actions <span class="tag new">new</span></h3><p>Mark tabs with <kbd>⇧↑↓</kbd> or <kbd>⌘</kbd>-click, then close, tag, pin or copy them all as Markdown links.</p></div>
+        <div class="card"><span class="emoji">👯</span><h3>Duplicate finder <span class="tag new">new</span></h3><p>Tabs open twice get a <strong>2×</strong> badge. <kbd>⌘D</kbd> closes the extra copies.</p></div>
+        <div class="card"><span class="emoji">💤</span><h3>Stale tabs <span class="tag new">new</span></h3><p>See what you haven't looked at in a week, oldest first. <kbd>⌘A</kbd> <kbd>⌘W</kbd> and they're gone.</p></div>
+        <div class="card"><span class="emoji">📌</span><h3>Pins &amp; keywords <span class="tag new">new</span></h3><p><kbd>⌘P</kbd> pins a tab to the top. <kbd>⌘K</kbd> gives it a keyword: type <code>jira</code> ↩ and you're there.</p></div>
+        <div class="card"><span class="emoji">↔️</span><h3>Move &amp; switch browsers <span class="tag new">new</span></h3><p><kbd>⌘M</kbd> pulls a tab into your front window. <kbd>⌘O</kbd> moves it to another browser.</p></div>
+        <div class="card"><span class="emoji">⏮️</span><h3>Previous-tab shortcut <span class="tag new">new</span></h3><p><kbd>⌃⌥⇥</kbd> jumps straight back to the tab you used before, no panel. Again to return.</p></div>
+        <div class="card"><span class="emoji">📄</span><h3>Search inside pages <span class="tag new">new</span></h3><p><kbd>⌘F</kbd> in the panel also matches the text on each page, with a snippet of where it was found.</p></div>
+        <div class="card"><span class="emoji">🗣️</span><h3>Shortcuts &amp; Siri <span class="tag new">new</span></h3><p>“Find Tab”, “Open Tab Group” and “Go to Previous Tab” actions for the Shortcuts app.</p></div>
+        <div class="card"><span class="emoji">🌐</span><h3>Automatic site groups</h3><p>Tabs from the same site group themselves in the Tags view: every GitHub tab under <code>github</code>, no setup.</p></div>
         <div class="card"><span class="emoji">🕘</span><h3>Recent tabs</h3><p>A live, most-recently-used list across all browsers. Press <kbd>⇥</kbd> to switch to it.</p></div>
         <div class="card"><span class="emoji">↩️</span><h3>Jump back</h3><p>Open on Recent and the previous tab is preselected: shortcut, <kbd>↩</kbd>, and you're back. Like <kbd>⌘⇥</kbd> for tabs.</p></div>
         <div class="card"><span class="emoji">⚡️</span><h3>Number keys</h3><p><kbd>⌘1</kbd>–<kbd>⌘9</kbd> open the first nine results instantly. <kbd>⌘↑</kbd> <kbd>⌘↓</kbd> hop between browsers.</p></div>
-        <div class="card"><span class="emoji">🧹</span><h3>Tidy up</h3><p>Close the selected tab with <kbd>⌘W</kbd> without leaving the panel. Copy its address with <kbd>⌘C</kbd>.</p></div>
         <div class="card"><span class="emoji">🔍</span><h3>Not open? Search the web</h3><p>When no tab matches, <kbd>↩</kbd> searches the web for what you typed, in your default browser.</p></div>
         <div class="card"><span class="emoji">🛡️</span><h3>Shortcut conflict check</h3><p>Warns when your shortcut clashes with macOS, another app's hotkey, or a launcher like Raycast, Alfred or ChatGPT.</p></div>
         <div class="card"><span class="emoji">♻️</span><h3>Reopen closed tabs</h3><p>Tabs you closed stay in Recent; pick one to open it again in the same browser.</p></div>
-        <div class="card"><span class="emoji">💤</span><h3>Never launches browsers</h3><p>Only open browsers are searched. If only Chrome is running, only Chrome is searched.</p></div>
-        <div class="card"><span class="emoji">🔒</span><h3>Private by design</h3><p>No network access, no analytics. Recent tabs are kept on your Mac and can be turned off or cleared.</p></div>
+        <div class="card"><span class="emoji">🚫</span><h3>Never launches browsers</h3><p>Only open browsers are searched. If only Chrome is running, only Chrome is searched.</p></div>
+        <div class="card"><span class="emoji">🔒</span><h3>Private by design</h3><p>No network access, no analytics. Recent tabs, tags, pins and keywords stay on your Mac and can be cleared.</p></div>
       </div>
     </div>
   </section>
@@ -132,12 +145,22 @@
         <div class="key"><kbd>↑ ↓</kbd><span>Move through results</span></div>
         <div class="key"><kbd>↩</kbd><span>Switch to the tab</span></div>
         <div class="key"><kbd>⌘1–9</kbd><span>Open result 1–9</span></div>
-        <div class="key"><kbd>⌘↑ ⌘↓</kbd><span>Previous / next browser</span></div>
-        <div class="key"><kbd>⇥</kbd><span>All · Recent · Tags</span></div>
-        <div class="key"><kbd>⌘T</kbd><span>Tag the selected tab</span></div>
-        <div class="key"><kbd>⌘W</kbd><span>Close the selected tab</span></div>
-        <div class="key"><kbd>⌘C</kbd><span>Copy the tab's address</span></div>
-        <div class="key"><kbd>⌘R</kbd><span>Reload the tab list</span></div>
+        <div class="key"><kbd>⌘↑ ⌘↓</kbd><span>Previous / next group</span></div>
+        <div class="key"><kbd>⇥</kbd><span>All · Recent · Tags · Stale</span></div>
+        <div class="key"><kbd>⇧↑ ⇧↓</kbd><span>Mark tabs</span></div>
+        <div class="key"><kbd>⌘A</kbd><span>Mark all / none</span></div>
+        <div class="key"><kbd>⌘↩</kbd><span>Open marked tabs or a whole #tag group</span></div>
+        <div class="key"><kbd>⌘T</kbd><span>Hashtags</span></div>
+        <div class="key"><kbd>⌘K</kbd><span>Keyword</span></div>
+        <div class="key"><kbd>⌘P</kbd><span>Pin to the top</span></div>
+        <div class="key"><kbd>⌘W</kbd><span>Close tab(s)</span></div>
+        <div class="key"><kbd>⌘D</kbd><span>Close duplicates</span></div>
+        <div class="key"><kbd>⌘M</kbd><span>Move to the front window</span></div>
+        <div class="key"><kbd>⌘O</kbd><span>Open in another browser</span></div>
+        <div class="key"><kbd>⌘C</kbd><span>Copy address / Markdown links</span></div>
+        <div class="key"><kbd>⌘F</kbd><span>Also search page text</span></div>
+        <div class="key"><kbd>⌘/</kbd><span>Show every key</span></div>
+        <div class="key"><kbd>⌃⌥⇥</kbd><span>Previous tab (anywhere)</span></div>
         <div class="key"><kbd>esc</kbd><span>Dismiss</span></div>
       </div>
     </div>

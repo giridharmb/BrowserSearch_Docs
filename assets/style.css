@@ -103,7 +103,7 @@ kbd { border-bottom-width: 2px; white-space: nowrap; }
 .viewer { max-width: 900px; margin: 40px auto 0; text-align: center; }
 .viewer input { position: absolute; opacity: 0; pointer-events: none; }
 .viewer .switch {
-  display: inline-flex; gap: 4px; padding: 4px; border-radius: 999px;
+  display: inline-flex; flex-wrap: wrap; justify-content: center; gap: 4px; padding: 4px; border-radius: 999px;
   background: var(--surface); border: 1px solid var(--border); box-shadow: var(--shadow); margin-bottom: 22px;
 }
 .viewer .switch label {
@@ -118,15 +118,21 @@ kbd { border-bottom-width: 2px; white-space: nowrap; }
 #v-all:checked ~ .switch label[for="v-all"],
 #v-search:checked ~ .switch label[for="v-search"],
 #v-recent:checked ~ .switch label[for="v-recent"],
-#v-tags:checked ~ .switch label[for="v-tags"] { background: var(--grad); color: #fff; }
+#v-tags:checked ~ .switch label[for="v-tags"],
+#v-marked:checked ~ .switch label[for="v-marked"],
+#v-stale:checked ~ .switch label[for="v-stale"] { background: var(--grad); color: #fff; }
 #v-all:checked ~ .frames .f-all,
 #v-search:checked ~ .frames .f-search,
 #v-recent:checked ~ .frames .f-recent,
-#v-tags:checked ~ .frames .f-tags { display: block; }
+#v-tags:checked ~ .frames .f-tags,
+#v-marked:checked ~ .frames .f-marked,
+#v-stale:checked ~ .frames .f-stale { display: block; }
 #v-all:focus-visible ~ .switch label[for="v-all"],
 #v-search:focus-visible ~ .switch label[for="v-search"],
 #v-recent:focus-visible ~ .switch label[for="v-recent"],
-#v-tags:focus-visible ~ .switch label[for="v-tags"] { outline: 2px solid var(--blue); outline-offset: 2px; }
+#v-tags:focus-visible ~ .switch label[for="v-tags"],
+#v-marked:focus-visible ~ .switch label[for="v-marked"],
+#v-stale:focus-visible ~ .switch label[for="v-stale"] { outline: 2px solid var(--blue); outline-offset: 2px; }
 
 /* Sections */
 section { padding: 56px 0; }
