@@ -29,6 +29,8 @@
     <a href="#tags">Hashtags &amp; saved groups</a>
     <a href="#bulk">Bulk actions</a>
     <a href="#pins">Pins &amp; keywords</a>
+    <a href="#archive">Tab archive</a>
+    <a href="#sessions">Saved sessions</a>
     <a href="#tidy">Duplicates &amp; stale tabs</a>
     <a href="#move">Moving tabs</a>
     <a href="#pagetext">Searching page text</a>
@@ -115,11 +117,30 @@
       <li><strong>Keyword</strong> with <kbd>⌘K</kbd>: give a tab a short word such as <code>jira</code>. Typing exactly that word shows it first under <em>Keyword</em>, so shortcut, <code>jira</code>, <kbd>↩</kbd> always lands there, and reopens it if the tab was closed. A keyword belongs to one page; giving it to another page moves it. Clear the box to remove it.</li>
     </ul>
 
+    <h2 id="archive">Tab archive</h2>
+    <img src="images/panel-archive.png" alt="Searching finds an archived page by a sentence inside it">
+    <ul>
+      <li><kbd>⌘E</kbd> archives the selected or marked tabs: BrowserSearch keeps the title, address, hashtags and the visible text of the page, then closes the tab. Firefox tabs are archived but stay open, since Firefox can't be asked to close them.</li>
+      <li>Archived pages show up under <em>Archive</em> whenever you search in All Tabs, matched by title, address, <code>#tag</code> or any words in the page text, with a snippet of where the words were found. <kbd>↩</kbd> reopens the page in the browser it came from and takes it out of the archive.</li>
+      <li>The <em>Saved</em> view (<kbd>⇥</kbd>) lists everything archived, newest first. <kbd>⌘W</kbd> deletes entries.</li>
+      <li>Page text needs <strong>Allow JavaScript from Apple Events</strong> in Chrome, Brave, Edge or Vivaldi (View › Developer) or Safari (Develop menu); without it the page is archived without its text. Turn off <strong>Keep page text</strong> in Settings › Archive to never store it.</li>
+      <li><strong>Archive stale tabs automatically</strong> (Settings › Archive, off by default): every half hour, tabs that would be listed in the Stale view are archived and closed. Tabs that are showing in their window, pinned, or given a keyword are never touched.</li>
+      <li>The archive keeps the latest 2,000 pages and up to 20,000 characters of text from each.</li>
+    </ul>
+
+    <h2 id="sessions">Saved sessions</h2>
+    <img src="images/panel-saved.png" alt="The Saved view: sessions and archived pages">
+    <ul>
+      <li><kbd>⌘S</kbd> saves the marked tabs, or every tab when none are marked, as a named session. Each browser window is kept separately, tabs in order.</li>
+      <li>In the <em>Saved</em> view, pick a session and press <kbd>↩</kbd>: each window is opened again in its browser, with all its tabs. The session stays saved, so you can restore it again later; <kbd>⌘W</kbd> deletes it.</li>
+      <li>Firefox tabs can't be read with their addresses, so sessions don't include them.</li>
+    </ul>
+
     <h2 id="tidy">Duplicates &amp; stale tabs</h2>
     <img src="images/panel-stale.png" alt="The Stale view listing tabs not looked at for a week">
     <ul>
       <li><strong>Duplicates:</strong> a page open more than once (in any browser, ignoring <code>https</code>, <code>www.</code> and <code>#section</code> differences) gets a <strong>2×</strong> badge. <kbd>⌘D</kbd> closes the extra copies among the tabs listed, keeping the one showing in its window. Search first to limit it, for example to one site.</li>
-      <li><strong>Stale view</strong> (<kbd>⇥</kbd> to <em>Stale</em>): open tabs you haven't looked at for 7 days, oldest first, with when you last saw each. Mark them all with <kbd>⌘A</kbd> and close with <kbd>⌘W</kbd>. Change the number of days in Settings › Organize.</li>
+      <li><strong>Stale view</strong> (<kbd>⇥</kbd> to <em>Stale</em>): open tabs you haven't looked at for 7 days, oldest first, with when you last saw each. Mark them all with <kbd>⌘A</kbd>, then archive with <kbd>⌘E</kbd> or close with <kbd>⌘W</kbd>. Change the number of days in Settings › Organize.</li>
       <li>“Looked at” means the tab was in front in its browser while BrowserSearch was running. Tabs never seen only count as stale once BrowserSearch has been running for that many days, so nothing shows up right after installing.</li>
     </ul>
 
@@ -155,14 +176,16 @@
       <tr><td><kbd>⌘↑</kbd> / <kbd>⌘↓</kbd></td><td>Jump to the previous / next group (browser, section or tag)</td></tr>
       <tr><td><kbd>↩</kbd></td><td>Switch to the selected tab</td></tr>
       <tr><td><kbd>⌘1</kbd>–<kbd>⌘9</kbd></td><td>Switch to result 1–9</td></tr>
-      <tr><td><kbd>⇥</kbd></td><td>Cycle All Tabs, Recent, # Tags and Stale</td></tr>
+      <tr><td><kbd>⇥</kbd></td><td>Cycle All Tabs, Recent, # Tags, Stale and Saved</td></tr>
       <tr><td><kbd>⇧↑</kbd> / <kbd>⇧↓</kbd>, <kbd>⌘</kbd>-click</td><td>Mark tabs for a bulk action</td></tr>
       <tr><td><kbd>⌘A</kbd></td><td>Mark every tab listed / clear marks</td></tr>
       <tr><td><kbd>⌘↩</kbd></td><td>Open the marked tabs, or in # Tags the whole group (reopening closed pages)</td></tr>
       <tr><td><kbd>⌘T</kbd></td><td>Hashtags for the selected or marked tabs</td></tr>
       <tr><td><kbd>⌘K</kbd></td><td>Keyword for the selected tab</td></tr>
       <tr><td><kbd>⌘P</kbd></td><td>Pin / unpin</td></tr>
-      <tr><td><kbd>⌘W</kbd></td><td>Close the selected or marked tabs (not Firefox)</td></tr>
+      <tr><td><kbd>⌘W</kbd></td><td>Close the selected or marked tabs (not Firefox); in Saved, delete them</td></tr>
+      <tr><td><kbd>⌘E</kbd></td><td>Archive the selected or marked tabs (and close them)</td></tr>
+      <tr><td><kbd>⌘S</kbd></td><td>Save the marked tabs, or all tabs, as a session</td></tr>
       <tr><td><kbd>⌘D</kbd></td><td>Close duplicate tabs among those listed</td></tr>
       <tr><td><kbd>⌘M</kbd></td><td>Move to the browser's front window</td></tr>
       <tr><td><kbd>⌘O</kbd></td><td>Open in another browser (then a number to pick it)</td></tr>
@@ -212,6 +235,12 @@
       <li><strong>Hashtags › Clear All Tags.</strong> Removes every tag you've added.</li>
       <li><strong>Keywords &amp; Pins › Clear Keywords &amp; Pins.</strong></li>
       <li><strong>Stale after N days.</strong> How long a tab can go without a look before the Stale view lists it (1–60, default 7).</li>
+    </ul>
+    <h3>Archive</h3>
+    <ul>
+      <li><strong>Keep page text.</strong> On by default. Off stores only titles, addresses and tags.</li>
+      <li><strong>Archive stale tabs automatically.</strong> Off by default. See <a href="#archive">Tab archive</a>.</li>
+      <li><strong>Clear Archive</strong> and <strong>Clear Sessions</strong> delete them.</li>
     </ul>
     <h3>Browsers</h3>
     <ul>

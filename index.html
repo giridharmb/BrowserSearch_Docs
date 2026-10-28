@@ -24,7 +24,7 @@
   <div class="wrap hero">
     <img class="icon" src="images/icon-512.png" alt="BrowserSearch app icon">
     <h1>Every tab, every browser,<br><span class="grad-text">one keystroke away</span>.</h1>
-    <p class="lead">Press <kbd>⌥Space</kbd>, type a few letters, hit <kbd>↩</kbd>. BrowserSearch jumps straight to the tab in Chrome, Safari or Firefox, whichever window it's hiding in.</p>
+    <p class="lead">Press <kbd>⌥Space</kbd>, type a few letters, hit <kbd>↩</kbd>. BrowserSearch jumps straight to the tab in Chrome, Safari or Firefox, whichever window it's hiding in. Close tabs without losing them: the archive keeps every page searchable, down to the words inside it.</p>
     <div class="actions">
       <a class="btn primary" href="docs.html#start">Get started</a>
       <a class="btn" href="#keyboard">Keyboard shortcuts</a>
@@ -32,13 +32,17 @@
     <p class="meta">macOS 14 Sonoma or later · Chrome, Safari, Firefox, Brave, Edge, Vivaldi · Nothing leaves your Mac</p>
 
     <div class="viewer">
-      <input type="radio" name="view" id="v-all" checked>
+      <input type="radio" name="view" id="v-archive" checked>
+      <input type="radio" name="view" id="v-saved">
+      <input type="radio" name="view" id="v-all">
       <input type="radio" name="view" id="v-search">
       <input type="radio" name="view" id="v-recent">
       <input type="radio" name="view" id="v-tags">
       <input type="radio" name="view" id="v-marked">
       <input type="radio" name="view" id="v-stale">
       <div class="switch" role="tablist" aria-label="Screenshots">
+        <label for="v-archive">Archive</label>
+        <label for="v-saved">Sessions</label>
         <label for="v-all">All tabs</label>
         <label for="v-search">Searching</label>
         <label for="v-recent">Recent</label>
@@ -47,6 +51,8 @@
         <label for="v-stale">Stale</label>
       </div>
       <div class="frames">
+        <img class="f-archive" src="images/panel-archive.png" alt="Searching 'renewal notice' finds an open tab and an archived page by a sentence inside it">
+        <img class="f-saved" src="images/panel-saved.png" alt="The Saved view: two saved sessions and five archived pages">
         <img class="f-all" src="images/panel-all.png" alt="The BrowserSearch panel listing tabs grouped under Chrome and Safari, and by window">
         <img class="f-search" src="images/panel-search.png" alt="Typing 'store' narrows the list to the two matching Chrome tabs">
         <img class="f-tags" src="images/panel-tags.png" alt="The Tags view: #work, #review and #reading groups, including a closed page that can be reopened">
@@ -78,17 +84,20 @@
         <p class="section-lead">Everything is reachable from the keyboard, and nothing gets in your way.</p>
       </div>
       <div class="grid">
+        <div class="card"><span class="emoji">🗄️</span><h3>Tab archive <span class="tag new">new</span></h3><p><kbd>⌘E</kbd> closes a tab and keeps it, page text included. Search finds it later by title, address, tag or any words on the page; <kbd>↩</kbd> reopens it.</p></div>
+        <div class="card"><span class="emoji">🪟</span><h3>Saved sessions <span class="tag new">new</span></h3><p><kbd>⌘S</kbd> saves every window across your browsers as a named session. Pick it in <em>Saved</em> and <kbd>↩</kbd> restores the windows, tabs in order.</p></div>
+        <div class="card"><span class="emoji">🧹</span><h3>Auto-archive <span class="tag new">new</span></h3><p>Optionally archive tabs you haven't looked at in a week, automatically. Pinned, keyworded and showing tabs are never touched.</p></div>
         <div class="card"><span class="emoji">🌳</span><h3>Organized like your Mac</h3><p>Tabs grouped by browser, then by window, with the tab each window is showing marked.</p></div>
         <div class="card"><span class="emoji">🔎</span><h3>Fuzzy search</h3><p>Titles and addresses. <code>store</code>, <code>gh pull</code>, or just initials: <code>pr</code> finds “Pull requests”.</p></div>
-        <div class="card"><span class="emoji">#️⃣</span><h3>Saved tab groups <span class="tag new">new</span></h3><p>Tag tabs <code>#work</code> with <kbd>⌘T</kbd>. <kbd>⌘↩</kbd> reopens the whole group later, even tabs you closed.</p></div>
-        <div class="card"><span class="emoji">☑️</span><h3>Bulk actions <span class="tag new">new</span></h3><p>Mark tabs with <kbd>⇧↑↓</kbd> or <kbd>⌘</kbd>-click, then close, tag, pin or copy them all as Markdown links.</p></div>
-        <div class="card"><span class="emoji">👯</span><h3>Duplicate finder <span class="tag new">new</span></h3><p>Tabs open twice get a <strong>2×</strong> badge. <kbd>⌘D</kbd> closes the extra copies.</p></div>
-        <div class="card"><span class="emoji">💤</span><h3>Stale tabs <span class="tag new">new</span></h3><p>See what you haven't looked at in a week, oldest first. <kbd>⌘A</kbd> <kbd>⌘W</kbd> and they're gone.</p></div>
-        <div class="card"><span class="emoji">📌</span><h3>Pins &amp; keywords <span class="tag new">new</span></h3><p><kbd>⌘P</kbd> pins a tab to the top. <kbd>⌘K</kbd> gives it a keyword: type <code>jira</code> ↩ and you're there.</p></div>
-        <div class="card"><span class="emoji">↔️</span><h3>Move &amp; switch browsers <span class="tag new">new</span></h3><p><kbd>⌘M</kbd> pulls a tab into your front window. <kbd>⌘O</kbd> moves it to another browser.</p></div>
-        <div class="card"><span class="emoji">⏮️</span><h3>Previous-tab shortcut <span class="tag new">new</span></h3><p><kbd>⌃⌥⇥</kbd> jumps straight back to the tab you used before, no panel. Again to return.</p></div>
-        <div class="card"><span class="emoji">📄</span><h3>Search inside pages <span class="tag new">new</span></h3><p><kbd>⌘F</kbd> in the panel also matches the text on each page, with a snippet of where it was found.</p></div>
-        <div class="card"><span class="emoji">🗣️</span><h3>Shortcuts &amp; Siri <span class="tag new">new</span></h3><p>“Find Tab”, “Open Tab Group” and “Go to Previous Tab” actions for the Shortcuts app.</p></div>
+        <div class="card"><span class="emoji">#️⃣</span><h3>Saved tab groups</h3><p>Tag tabs <code>#work</code> with <kbd>⌘T</kbd>. <kbd>⌘↩</kbd> reopens the whole group later, even tabs you closed.</p></div>
+        <div class="card"><span class="emoji">☑️</span><h3>Bulk actions</h3><p>Mark tabs with <kbd>⇧↑↓</kbd> or <kbd>⌘</kbd>-click, then close, tag, pin or copy them all as Markdown links.</p></div>
+        <div class="card"><span class="emoji">👯</span><h3>Duplicate finder</h3><p>Tabs open twice get a <strong>2×</strong> badge. <kbd>⌘D</kbd> closes the extra copies.</p></div>
+        <div class="card"><span class="emoji">💤</span><h3>Stale tabs</h3><p>See what you haven't looked at in a week, oldest first. <kbd>⌘A</kbd> <kbd>⌘E</kbd> and they're archived.</p></div>
+        <div class="card"><span class="emoji">📌</span><h3>Pins &amp; keywords</h3><p><kbd>⌘P</kbd> pins a tab to the top. <kbd>⌘K</kbd> gives it a keyword: type <code>jira</code> ↩ and you're there.</p></div>
+        <div class="card"><span class="emoji">↔️</span><h3>Move &amp; switch browsers</h3><p><kbd>⌘M</kbd> pulls a tab into your front window. <kbd>⌘O</kbd> moves it to another browser.</p></div>
+        <div class="card"><span class="emoji">⏮️</span><h3>Previous-tab shortcut</h3><p><kbd>⌃⌥⇥</kbd> jumps straight back to the tab you used before, no panel. Again to return.</p></div>
+        <div class="card"><span class="emoji">📄</span><h3>Search inside pages</h3><p><kbd>⌘F</kbd> in the panel also matches the text on each page, with a snippet of where it was found.</p></div>
+        <div class="card"><span class="emoji">🗣️</span><h3>Shortcuts &amp; Siri</h3><p>“Find Tab”, “Open Tab Group” and “Go to Previous Tab” actions for the Shortcuts app.</p></div>
         <div class="card"><span class="emoji">🌐</span><h3>Automatic site groups</h3><p>Tabs from the same site group themselves in the Tags view: every GitHub tab under <code>github</code>, no setup.</p></div>
         <div class="card"><span class="emoji">🕘</span><h3>Recent tabs</h3><p>A live, most-recently-used list across all browsers. Press <kbd>⇥</kbd> to switch to it.</p></div>
         <div class="card"><span class="emoji">↩️</span><h3>Jump back</h3><p>Open on Recent and the previous tab is preselected: shortcut, <kbd>↩</kbd>, and you're back. Like <kbd>⌘⇥</kbd> for tabs.</p></div>
@@ -97,7 +106,7 @@
         <div class="card"><span class="emoji">🛡️</span><h3>Shortcut conflict check</h3><p>Warns when your shortcut clashes with macOS, another app's hotkey, or a launcher like Raycast, Alfred or ChatGPT.</p></div>
         <div class="card"><span class="emoji">♻️</span><h3>Reopen closed tabs</h3><p>Tabs you closed stay in Recent; pick one to open it again in the same browser.</p></div>
         <div class="card"><span class="emoji">🚫</span><h3>Never launches browsers</h3><p>Only open browsers are searched. If only Chrome is running, only Chrome is searched.</p></div>
-        <div class="card"><span class="emoji">🔒</span><h3>Private by design</h3><p>No network access, no analytics. Recent tabs, tags, pins and keywords stay on your Mac and can be cleared.</p></div>
+        <div class="card"><span class="emoji">🔒</span><h3>Private by design</h3><p>No network access, no analytics. Recent tabs, tags, pins, the archive and sessions stay on your Mac and can be cleared.</p></div>
       </div>
     </div>
   </section>
@@ -146,7 +155,7 @@
         <div class="key"><kbd>↩</kbd><span>Switch to the tab</span></div>
         <div class="key"><kbd>⌘1–9</kbd><span>Open result 1–9</span></div>
         <div class="key"><kbd>⌘↑ ⌘↓</kbd><span>Previous / next group</span></div>
-        <div class="key"><kbd>⇥</kbd><span>All · Recent · Tags · Stale</span></div>
+        <div class="key"><kbd>⇥</kbd><span>All · Recent · Tags · Stale · Saved</span></div>
         <div class="key"><kbd>⇧↑ ⇧↓</kbd><span>Mark tabs</span></div>
         <div class="key"><kbd>⌘A</kbd><span>Mark all / none</span></div>
         <div class="key"><kbd>⌘↩</kbd><span>Open marked tabs or a whole #tag group</span></div>
@@ -154,6 +163,8 @@
         <div class="key"><kbd>⌘K</kbd><span>Keyword</span></div>
         <div class="key"><kbd>⌘P</kbd><span>Pin to the top</span></div>
         <div class="key"><kbd>⌘W</kbd><span>Close tab(s)</span></div>
+        <div class="key"><kbd>⌘E</kbd><span>Archive tab(s)</span></div>
+        <div class="key"><kbd>⌘S</kbd><span>Save a session</span></div>
         <div class="key"><kbd>⌘D</kbd><span>Close duplicates</span></div>
         <div class="key"><kbd>⌘M</kbd><span>Move to the front window</span></div>
         <div class="key"><kbd>⌘O</kbd><span>Open in another browser</span></div>

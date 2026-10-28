@@ -9,6 +9,8 @@ and press **↩**. BrowserSearch switches to that browser, raises the right wind
 
 ## Features
 
+- Tab archive: ⌘E closes tabs but keeps them, with page text, searchable from All Tabs; ↩ reopens. Optional auto-archive of stale tabs
+- Saved sessions: ⌘S saves windows across browsers, ↩ in the Saved view restores them
 - Global hotkey that works from any app, configurable in Settings
 - Tabs grouped by browser and window; fuzzy search as you type (`gh pull`, initials like `pr`)
 - Recent tabs: a live most-recently-used list across browsers, with jump-back and reopen
@@ -21,7 +23,7 @@ and press **↩**. BrowserSearch switches to that browser, raises the right wind
 - ⌘1–9 to jump, ⌘W to close a tab, ⌘C to copy its address, Esc to dismiss
 - Searches Chrome, Safari, Brave, Edge, Vivaldi and Firefox at once; only browsers that are already open are searched
 - Lives in the menu bar, optional launch at login
-- Nothing leaves your Mac: no network access; recent tabs are stored locally and can be cleared
+- Nothing leaves your Mac: no network access; recent tabs, the archive and sessions are stored locally and can be cleared
 
 ## Requirements
 

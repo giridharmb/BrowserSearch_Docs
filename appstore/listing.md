@@ -2,40 +2,43 @@
 
 Bundle ID `com.giridharmb.BrowserSearch` · Platform macOS · Category Productivity · Price Free · SKU `browsersearch-mac`
 
-## Name
-BrowserSearch
+## Name (30)
+BrowserSearch: Tab Archive
 
 ## Subtitle (30)
-Find any browser tab instantly
+Close tabs without losing them
 
 ## Promotional text (170)
-New: saved tab groups, bulk close and tag, duplicate finder, stale tabs, pins, keywords, and a previous-tab shortcut. Every tab, every browser, one keystroke away.
+New in 1.2: a searchable tab archive. Close tabs with ⌘E and find them later by any words on the page. Save whole browser sessions and restore them in one key.
 
 ## Description
-Too many tabs, too many windows? BrowserSearch finds the one you want in a keystroke.
+Too many tabs open because you're afraid to lose them? BrowserSearch lets you close them without losing anything.
 
-Press your shortcut from any app, type a few letters of a page's title or address, and press Return. BrowserSearch brings the right browser window forward with that tab selected.
+TAB ARCHIVE
+Press ⌘E on any tab (or a whole set of tabs) to archive it. BrowserSearch keeps the page's title, address, your hashtags and the text on the page, then closes the tab. Weeks later, type a few words you remember, even something from the middle of the article, and the page comes back with a snippet of where it matched. Press Return to reopen it.
+• Full-text search across everything you've archived, right next to your open tabs.
+• Auto-archive (optional): tabs you haven't looked at in a week are archived for you. Pinned tabs, keyworded tabs and the tab you're looking at are never touched.
+• Up to 2,000 pages, stored only on your Mac.
 
-• Every browser at once: Google Chrome, Safari, Brave, Microsoft Edge and Vivaldi, grouped by browser and window.
-• Fuzzy search: matches titles and addresses, initials ("pr" finds Pull requests), and highlights what matched.
-• Recent tabs: a live most-recently-used list across browsers. Jump back to the previous tab in two keys, or reopen one you closed.
-• Saved tab groups: press ⌘T to tag tabs #work, type #work to see just those, and ⌘Return reopens the whole group, even tabs you closed. Tabs from the same site are grouped automatically.
-• Bulk actions: mark tabs with Shift-arrows or ⌘-click, then close, tag, pin or copy them all as Markdown links.
-• Duplicate finder and Stale view: spot tabs open twice or untouched for a week, and close them in two keys.
-• Pins and keywords: pin your key tabs to the top; give a tab a keyword like "jira" and jump there by typing it.
-• Move tabs into your front window, or into another browser.
-• Search the text inside pages, not just titles (needs a browser setting).
-• Previous-tab shortcut: ⌃⌥⇥ jumps straight back to the tab you were on, from anywhere.
+SAVED SESSIONS
+Press ⌘S to save every open window, across Chrome, Safari, Brave, Edge and Vivaldi, as a named session ("Release week", "Trip planning"). Close everything, and when you need it again, pick the session and press Return: each window reopens in its browser with its tabs in order.
+
+FIND ANY OPEN TAB
+Press your shortcut from any app, type a few letters, press Return. BrowserSearch brings the right window forward with that tab selected.
+• Every browser at once, grouped by browser and window, with fuzzy matching on titles and addresses.
+• Stale view: tabs you haven't looked at in a week, ready to archive in two keys.
+• Saved tab groups with #hashtags, pins, keywords, duplicate finder, bulk actions on marked tabs.
+• Recent tabs and a previous-tab shortcut (⌃⌥⇥).
 • Shortcuts and Siri actions: Find Tab, Open Tab Group, Go to Previous Tab.
-• Keyboard first: ↑↓ and Return, ⌘1–9 to jump, ⌘W to close a tab, ⌘C to copy its address, Esc to dismiss.
-• Smart shortcut setup: warns if your shortcut clashes with macOS, another app or a launcher.
-• Lives in the menu bar, optional launch at login.
-• Private: no network access, no analytics. Recent tabs and tags stay on your Mac and can be cleared anytime.
+• Keyboard first: every action has a key; ⌘/ shows them all.
+
+PRIVATE
+No network access, no analytics, no account. The archive and sessions are files on your Mac that you can clear anytime in Settings.
 
 BrowserSearch only reads browsers that are already open; it never launches one.
 
 ## Keywords (100)
-tabs,browser,tab switcher,search,chrome,safari,hotkey,launcher,productivity,menu bar,brave,edge
+tab archive,tabs,session,save tabs,read later,full text,search,browser,chrome,safari,brave,edge
 
 ## Support URL
 https://giridharmb.github.io/BrowserSearch_Docs/support.html
@@ -50,14 +53,20 @@ https://giridharmb.github.io/BrowserSearch_Docs/privacy.html
 Data Not Collected.
 
 ## Review notes
-BrowserSearch is a tab switcher. It uses Apple Events to read the titles and URLs of open tabs in web browsers and to select the tab the user picks; that is the app's only function. Because these browsers don't publish scripting access groups, the app uses `com.apple.security.temporary-exception.apple-events` for exactly these bundle IDs: com.google.Chrome, com.apple.Safari, com.brave.Browser, com.microsoft.edgemac, com.vivaldi.Vivaldi. macOS asks the user for Automation permission per browser before any access; nothing is sent off the device.
+Version 1.2 changes the app substantially in response to the Guideline 4.3 review. BrowserSearch is now a tab archive and session manager, not only a tab switcher:
+- Tab archive: ⌘E closes tabs and keeps their title, address, tags and page text in a local archive (Application Support/BrowserSearch/archive.json). Archived pages are full-text searchable from the main panel and can be reopened. An optional setting archives tabs automatically once they go unviewed for a week.
+- Saved sessions: ⌘S saves all windows across browsers as a named session; the Saved view restores each window with its tabs.
+- A new Saved view and an Archive settings pane manage both.
 
-Page text search (⌘F in the panel) runs `document.body.innerText` in the user's tabs through the same Apple Events, only when the user presses ⌘F and only if they have enabled "Allow JavaScript from Apple Events" in their browser; the text stays in memory.
+Apple Events: BrowserSearch reads the titles and URLs of open tabs, selects, closes and opens tabs and windows in these browsers, using `com.apple.security.temporary-exception.apple-events` for exactly: com.google.Chrome, com.apple.Safari, com.brave.Browser, com.microsoft.edgemac, com.vivaldi.Vivaldi. macOS asks for Automation permission per browser first. Page text for the archive and ⌘F search is read with `document.body.innerText` only if the user has enabled "Allow JavaScript from Apple Events" in their browser. Nothing is sent off the device; the app has no network access.
 
-To test: open Safari with a few tabs, launch BrowserSearch (menu bar icon), allow the Automation prompt, press ⌥Space (or choose Search Tabs from the menu bar icon), type part of a tab's title and press Return.
+To test: open Safari with a few tabs, launch BrowserSearch (menu bar icon), allow the Automation prompt, press ⌥Space. Select a tab and press ⌘E: it closes and is archived. Type a word from its title: it appears under Archive; press Return to reopen it. Press ⌘S, then Return to save a session; close the window; press Tab until "Saved" and press Return on the session to restore it.
 
-## What's New in 1.1
-Saved tab groups (⌘Return reopens a #tag group), bulk actions on marked tabs, duplicate finder (⌘D), Stale view, pins (⌘P), keywords (⌘K), move to front window (⌘M) and to another browser (⌘O), page text search (⌘F), a previous-tab shortcut (⌃⌥⇥), Shortcuts/Siri actions, and ⌘/ to see every key.
+## What's New in 1.2
+• Tab archive: ⌘E closes tabs without losing them. Archived pages keep their text and are searchable by any words on the page; Return reopens them.
+• Saved sessions: ⌘S saves all your windows across browsers; restore them later in one key.
+• Auto-archive (optional) for tabs you haven't looked at in a week.
+• New Saved view and Archive settings.
 
 ## Screenshots
-appstore/screenshots/01–07 (2880×1800), generated by scripts/storeshots.swift in the app repo.
+appstore/screenshots/01-archive … 07-marked (2880×1800), generated by scripts/storeshots.swift in the app repo.

@@ -23,7 +23,7 @@
 <main class="wrap">
   <section>
     <h2>Privacy Policy</h2>
-    <p class="section-lead">Effective October 24, 2026. Short version: BrowserSearch doesn't collect, sell or share any data about you.</p>
+    <p class="section-lead">Effective October 28, 2026. Short version: BrowserSearch doesn't collect, sell or share any data about you.</p>
 
     <h3>What BrowserSearch reads</h3>
     <p>When you open the search panel, BrowserSearch reads the titles and URLs of tabs in browsers that are already open, so it can search them. That list is kept in memory only and replaced on the next search.</p>
@@ -35,10 +35,13 @@
       <li>With Recent tabs on (the default): the title, URL, browser and time of the <strong>last 50 tabs</strong> you used. They are saved in BrowserSearch's preferences on your Mac so the list survives restarts.</li>
       <li>Hashtags, keywords and pins you add, with the title and address (or, for Firefox, the title) of each of those pages so they can be reopened. Remove them in Settings › Organize.</li>
       <li>When each page was last the tab in front, for the Stale view. Entries older than 90 days are dropped automatically, and nothing is recorded while Recent tabs is turned off.</li>
+      <li><strong>Tab archive</strong>: when you archive a tab (<kbd>⌘E</kbd>, or automatically if you turn that on), its title, address, hashtags and, if your browser allows it and <strong>Keep page text</strong> is on, up to 20,000 characters of the page's visible text. Stored in a file in BrowserSearch's Application Support folder on your Mac.</li>
+      <li><strong>Saved sessions</strong>: the titles and addresses of the tabs you save with <kbd>⌘S</kbd>, in the same folder.</li>
     </ul>
+    <p>Delete the archive or sessions anytime with <strong>Clear Archive</strong> and <strong>Clear Sessions</strong> in Settings › Archive, or individual entries with <kbd>⌘W</kbd> in the Saved view.</p>
     <h3>Page text</h3>
     <ul>
-      <li>Only when you press <kbd>⌘F</kbd> in the panel (and you've allowed it in your browser), BrowserSearch reads the visible text of your open pages to search it. The text is kept in memory while the panel is open and never written to disk or sent anywhere.</li>
+      <li>Only when you press <kbd>⌘F</kbd> in the panel (and you've allowed it in your browser), BrowserSearch reads the visible text of your open pages to search it. The text is kept in memory while the panel is open. Page text is written to disk only for tabs you archive, as described above, and is never sent anywhere.</li>
     </ul>
     <p>To remove them, click <strong>Clear Recent Tabs</strong> in Settings. To stop collecting them, turn off <strong>Remember recently used tabs</strong>. Turning a browser off in Settings › Browsers also stops tracking it.</p>
 

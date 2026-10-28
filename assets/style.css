@@ -121,18 +121,24 @@ kbd { border-bottom-width: 2px; white-space: nowrap; }
 #v-tags:checked ~ .switch label[for="v-tags"],
 #v-marked:checked ~ .switch label[for="v-marked"],
 #v-stale:checked ~ .switch label[for="v-stale"] { background: var(--grad); color: #fff; }
+#v-archive:checked ~ .switch label[for="v-archive"] { background: var(--grad); color: #fff; }
+#v-saved:checked ~ .switch label[for="v-saved"] { background: var(--grad); color: #fff; }
 #v-all:checked ~ .frames .f-all,
 #v-search:checked ~ .frames .f-search,
 #v-recent:checked ~ .frames .f-recent,
 #v-tags:checked ~ .frames .f-tags,
 #v-marked:checked ~ .frames .f-marked,
 #v-stale:checked ~ .frames .f-stale { display: block; }
+#v-archive:checked ~ .frames .f-archive { display: block; }
+#v-saved:checked ~ .frames .f-saved { display: block; }
 #v-all:focus-visible ~ .switch label[for="v-all"],
 #v-search:focus-visible ~ .switch label[for="v-search"],
 #v-recent:focus-visible ~ .switch label[for="v-recent"],
 #v-tags:focus-visible ~ .switch label[for="v-tags"],
 #v-marked:focus-visible ~ .switch label[for="v-marked"],
 #v-stale:focus-visible ~ .switch label[for="v-stale"] { outline: 2px solid var(--blue); outline-offset: 2px; }
+#v-archive:focus-visible ~ .switch label[for="v-archive"] { outline: 2px solid var(--blue); outline-offset: 2px; }
+#v-saved:focus-visible ~ .switch label[for="v-saved"] { outline: 2px solid var(--blue); outline-offset: 2px; }
 
 /* Sections */
 section { padding: 56px 0; }
