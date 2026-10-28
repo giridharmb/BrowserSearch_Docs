@@ -9,7 +9,7 @@ BrowserSearch: Tab Archive
 Close tabs without losing them
 
 ## Promotional text (170)
-New in 1.2: a searchable tab archive. Close tabs with ⌘E and find them later by any words on the page. Save whole browser sessions and restore them in one key.
+New in 1.2: a searchable tab archive. Close tabs with Command-E and find them later by any words on the page. Save whole browser sessions and restore them in one key.
 
 ## Description
 Too many tabs open because you're afraid to lose them? BrowserSearch lets you close them without losing anything.
@@ -62,7 +62,7 @@ Apple Events: BrowserSearch reads the titles and URLs of open tabs, selects, clo
 
 To test: open Safari with a few tabs, launch BrowserSearch (menu bar icon), allow the Automation prompt, press ⌥Space. Select a tab and press ⌘E: it closes and is archived. Type a word from its title: it appears under Archive; press Return to reopen it. Press ⌘S, then Return to save a session; close the window; press Tab until "Saved" and press Return on the session to restore it.
 
-## What's New in 1.2
+## What's New in 1.2 (not editable until a version is live)
 • Tab archive: ⌘E closes tabs without losing them. Archived pages keep their text and are searchable by any words on the page; Return reopens them.
 • Saved sessions: ⌘S saves all your windows across browsers; restore them later in one key.
 • Auto-archive (optional) for tabs you haven't looked at in a week.
